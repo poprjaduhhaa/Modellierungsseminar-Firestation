@@ -14,6 +14,7 @@ Gruppenproject zur Modellierung von Schichtrotationsmustern im Rettungsdienst.
 ## Ausführen
 ```bash
 python model/ilp.py
+```
 
 ## How to use
 
@@ -38,4 +39,5 @@ After you make changes — save and upload:
 ### Rules to avoid conflicts
 - Always git pull before you start working
 - Don't edit the same file as someone else at the same time
-- Write short but clear commit messages (e.g. "added shift dataset" not "changes")
+- Write short but clear commit messages (e.g. "added shift dataset" not "changes").
+- Keep comments
