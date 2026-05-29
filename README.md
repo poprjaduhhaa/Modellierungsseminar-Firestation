@@ -1,43 +1,46 @@
-# Modellierungsseminar - Firestation
+# Snake Building – Modellierungsseminar (Feuerwehr)
 
-Gruppenproject zur Modellierung von Schichtrotationsmustern im Rettungsdienst.
+**Course:** Modellierungsseminar, Uni Siegen  
+**Supervisor:** Prof. Erwin Pesch  
+**Meeting:** 01.06.2026, 15:00, Room US-D 308  
+**Team:** 3 members, collaborative via GitHub
 
-## Struktur
-- `data/` — Schichtdatensatz
-- `model/` — ILP-Modell
-- `results/` — Ausgaben des Solvers
+## Problem
 
-## Voraussetzungen
-- Python 3.x
-- Gurobi
+Given a set of fire-station shifts (with times, worker requirements and classes),
+build a minimum-total-length set of rotating schedules called **snakes** that cover
+all shifts while respecting rest-time constraints between consecutive shifts.
 
-## Ausführen
-```bash
-python model/ilp.py
+Minimising the sum of snake lengths equals minimising the total number of workers needed.
+
+## Repository structure
+
+```
+data/     synthetic shift dataset + instance/compatibility helpers
+model/    ILP formulation (Gurobi)
+docs/     formal problem definition, examples
+results/  solver output
 ```
 
-## How to use
+## Requirements
 
-### First time setup
-1. Install Git: https://git-scm.com/downloads
-2. Install Python: https://www.python.org/downloads
-3. Open terminal (Mac/Linux) or Git Bash (Windows)
-4. Clone the repo:
-   git clone https://github.com/poprjaduhhaa/Modellierungsseminar-Firestation
-5. Go into the folder:
-   cd Modellierungsseminar-Firestation
+- Python 3.10+
+- `gurobipy` with a valid Gurobi licence (student licence via Uni Siegen)
 
-### Every time you work on the project
-Before you start — get the latest version:
-   git pull
+## Quick start
 
-After you make changes — save and upload:
-   git add .
-   git commit -m "describe what you changed"
-   git push
+```bash
+git clone https://github.com/poprjaduhhaa/Modellierungsseminar-Firestation
+cd Modellierungsseminar-Firestation
+python model/ILP.py
+```
 
-### Rules to avoid conflicts
-- Always git pull before you start working
-- Don't edit the same file as someone else at the same time
-- Write short but clear commit messages (e.g. "added shift dataset" not "changes").
-- Keep comments
+## Git workflow (for the team)
+
+```bash
+git pull                            # always before you start
+# … edit files …
+git add data/shifts.py              # stage only what you changed
+git commit -m "short clear message"
+git push
+```
