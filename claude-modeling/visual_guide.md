@@ -274,3 +274,131 @@ For instance i=5:   0+0+1+0  +  0+0+0+0  = 1  ✓
 > `j` — week position index (1 to W_max)
 > `d` — day of week (1 to 7)
 > `C1–C6` — the six constraints the solver must satisfy simultaneously
+
+
+---
+
+## 9. Concrete Tables From Our Dataset
+
+### TABLE 1 — All shift instances (the set I)
+
+Each row is one `i`. These are what the ILP assigns to snakes.
+
+| i | name | day (d) | copy | start | end | class |
+|---|------|---------|------|-------|-----|-------|
+|  0 | EARLY_ | Mon | 0 | 06:00 | 14:00    | 1 |
+|  1 | EARLY_ | Mon | 1 | 06:00 | 14:00    | 1 |
+|  2 | EARLY_ | Tue | 0 | 06:00 | 14:00    | 1 |
+|  3 | EARLY_ | Tue | 1 | 06:00 | 14:00    | 1 |
+|  4 | EARLY_ | Wed | 0 | 06:00 | 14:00    | 1 |
+|  5 | EARLY_ | Wed | 1 | 06:00 | 14:00    | 1 |
+|  6 | EARLY_ | Thu | 0 | 06:00 | 14:00    | 1 |
+|  7 | EARLY_ | Thu | 1 | 06:00 | 14:00    | 1 |
+|  8 | EARLY_ | Fri | 0 | 06:00 | 14:00    | 1 |
+|  9 | EARLY_ | Fri | 1 | 06:00 | 14:00    | 1 |
+| 10 | LATE__ | Mon | 0 | 14:00 | 22:00    | 1 |
+| 11 | LATE__ | Mon | 1 | 14:00 | 22:00    | 1 |
+| 12 | LATE__ | Tue | 0 | 14:00 | 22:00    | 1 |
+| 13 | LATE__ | Tue | 1 | 14:00 | 22:00    | 1 |
+| 14 | LATE__ | Wed | 0 | 14:00 | 22:00    | 1 |
+| 15 | LATE__ | Wed | 1 | 14:00 | 22:00    | 1 |
+| 16 | LATE__ | Thu | 0 | 14:00 | 22:00    | 1 |
+| 17 | LATE__ | Thu | 1 | 14:00 | 22:00    | 1 |
+| 18 | LATE__ | Fri | 0 | 14:00 | 22:00    | 1 |
+| 19 | LATE__ | Fri | 1 | 14:00 | 22:00    | 1 |
+| 20 | NIGHT_ | Mon | 0 | 22:00 | 10:00+1d | 2 |
+| 21 | NIGHT_ | Mon | 1 | 22:00 | 10:00+1d | 2 |
+| 22 | NIGHT_ | Tue | 0 | 22:00 | 10:00+1d | 2 |
+| 23 | NIGHT_ | Tue | 1 | 22:00 | 10:00+1d | 2 |
+| 24 | NIGHT_ | Wed | 0 | 22:00 | 10:00+1d | 2 |
+| 25 | NIGHT_ | Wed | 1 | 22:00 | 10:00+1d | 2 |
+| 26 | NIGHT_ | Thu | 0 | 22:00 | 10:00+1d | 2 |
+| 27 | NIGHT_ | Thu | 1 | 22:00 | 10:00+1d | 2 |
+| 28 | NIGHT_ | Fri | 0 | 22:00 | 10:00+1d | 2 |
+| 29 | NIGHT_ | Fri | 1 | 22:00 | 10:00+1d | 2 |
+| 30 | NIGHT_ | Sat | 0 | 22:00 | 10:00+1d | 2 |
+| 31 | NIGHT_ | Sat | 1 | 22:00 | 10:00+1d | 2 |
+| 32 | NIGHT_ | Sun | 0 | 22:00 | 10:00+1d | 2 |
+| 33 | NIGHT_ | Sun | 1 | 22:00 | 10:00+1d | 2 |
+| 34 | WHOLE_ | Sat | 0 | 08:00 | 08:00+1d | 1 |
+| 35 | WHOLE_ | Sat | 1 | 08:00 | 08:00+1d | 1 |
+| 36 | WHOLE_ | Sat | 2 | 08:00 | 08:00+1d | 1 |
+| 37 | WHOLE_ | Sun | 0 | 08:00 | 08:00+1d | 1 |
+| 38 | WHOLE_ | Sun | 1 | 08:00 | 08:00+1d | 1 |
+| 39 | WHOLE_ | Sun | 2 | 08:00 | 08:00+1d | 1 |
+
+> **i** = instance index used in x[i,k,j]  
+> **copy** = 0 or 1 because workers=2 (two identical slots per shift per day)  
+> **class** = 1 (day/attractive) or 2 (night/unattractive)  
+> **+1d** = shift ends the next day (overnight)
+
+---
+
+### TABLE 2 — Incompatible consecutive-day pairs (sample)
+
+These are the pairs that trigger constraints C4, C5, C6.
+If (a,b) is here, instances a and b **cannot be adjacent in a snake**.
+
+| a.id | a.name | a.day | → | b.id | b.name | b.day | gap (min) | R=660? |
+|------|--------|-------|---|------|--------|-------|-----------|--------|
+| 10 | LATE__ | Mon | → | 2 | EARLY_ | Tue | 480 | ✗ |
+| 18 | LATE__ | Fri | → | 8 | EARLY_ | Sat | 480 | ✗ |
+| 20 | NIGHT_ | Mon | → | 2 | EARLY_ | Tue | -240 | ✗ |
+| 20 | NIGHT_ | Mon | → | 10 | LATE__ | Tue | 240 | ✗ |
+| 30 | NIGHT_ | Sat | → | 34 | WHOLE_ | Sun | -480 | ✗ |
+| 34 | WHOLE_ | Sat | → | 37 | WHOLE_ | Sun | 0 | ✗ |
+
+> **gap** = 1440 + start[b] − end[a]  
+> If gap < R=660 → this pair is incompatible → constraints C4/C5/C6 apply to them
+
+---
+
+### TABLE 3 — x[i, k, j]: which instance goes where (first 20 rows)
+
+This is what a **solution** looks like as a table.
+Each row means: x[i, k, j] = 1 (all other cells for this i are 0).
+
+| i | name | day | copy | assignment |
+|---|------|-----|------|------------|
+|  0 | EARLY_ | Mon | 0 | x[0,0,1] = 1 |
+|  1 | EARLY_ | Mon | 1 | x[1,0,6] = 1 |
+|  2 | EARLY_ | Tue | 0 | x[2,0,2] = 1 |
+|  3 | EARLY_ | Tue | 1 | x[3,0,7] = 1 |
+|  4 | EARLY_ | Wed | 0 | x[4,0,3] = 1 |
+|  5 | EARLY_ | Wed | 1 | x[5,0,8] = 1 |
+|  6 | EARLY_ | Thu | 0 | x[6,0,4] = 1 |
+|  7 | EARLY_ | Thu | 1 | x[7,0,9] = 1 |
+|  8 | EARLY_ | Fri | 0 | x[8,0,5] = 1 |
+|  9 | EARLY_ | Fri | 1 | x[9,0,10] = 1 |
+| 10 | LATE__ | Mon | 0 | x[10,0,1] = 1 |
+| 11 | LATE__ | Mon | 1 | x[11,0,6] = 1 |
+| 12 | LATE__ | Tue | 0 | x[12,0,2] = 1 |
+| 13 | LATE__ | Tue | 1 | x[13,0,7] = 1 |
+| 14 | LATE__ | Wed | 0 | x[14,0,3] = 1 |
+| 15 | LATE__ | Wed | 1 | x[15,0,8] = 1 |
+| 16 | LATE__ | Thu | 0 | x[16,0,4] = 1 |
+| 17 | LATE__ | Thu | 1 | x[17,0,9] = 1 |
+| 18 | LATE__ | Fri | 0 | x[18,0,5] = 1 |
+| 19 | LATE__ | Fri | 1 | x[19,0,10] = 1 |
+| ... | ... | ... | ... | ... (40 rows total) |
+
+> **k** = which snake (0, 1, or 2)  
+> **j** = which week position inside that snake  
+> Reading row 1: instance 0 (EARLY_ Mon copy0) is placed in snake 0 at week 1
+
+---
+
+### TABLE 4 — Snake lengths w[k]
+
+Summary of the solution above.
+
+| snake k | week positions used (j) | w[k] = max(j) | workers |
+|---------|------------------------|---------------|---------|
+| k=0 | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | 10 | 10 workers |
+| k=1 | [1, 2, 3, 4, 5, 6, 7] | 7 | 7 workers |
+| k=2 | [1, 2, 3, 4, 5, 6] | 6 | 6 workers |
+| **total** | | | **23 workers** |
+
+> **w[k]** = the highest week index used in snake k  
+> This is what the objective minimises: w[0] + w[1] + w[2] = 23  
+> The ILP finds the assignment that makes this sum as small as possible
