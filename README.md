@@ -2,45 +2,44 @@
 
 **Course:** Modellierungsseminar, Uni Siegen  
 **Supervisor:** Prof. Erwin Pesch  
-**Meeting:** 01.06.2026, 15:00, Room US-D 308  
-**Team:** 3 members, collaborative via GitHub
+**Team:** 3 members
 
-## Problem
-
-Given a set of fire-station shifts (with times, worker requirements and classes),
-build a minimum-total-length set of rotating schedules called **snakes** that cover
-all shifts while respecting rest-time constraints between consecutive shifts.
-
-Minimising the sum of snake lengths equals minimising the total number of workers needed.
-
-## Repository structure
+## Structure
 
 ```
-data/     synthetic shift dataset + instance/compatibility helpers
-model/    ILP formulation (Gurobi)
-docs/     formal problem definition, examples
-results/  solver output
+docs/                              team documents (specs, templates, definitions)
+  TuMuPl-Beschreibung_cleanedUp.docx   original problem statement (cleaned)
+  Input-Daten.docx                     what input data the system needs
+  definitions.docx                     team definitions
+  template_ShiftDataSet.xlsx           shift dataset template (fire station)
+
+claude-modeling/                   Claude-assisted model (step-by-step build)
+  problem_definition.md            formal math: sets, parameters, variables, constraints
+  data/shifts.py                   synthetic fire station dataset
+  model/ILP.py                     full ILP model (Gurobi)
+  examples/toy_model.py            simplified model — no solver, pure Python
+
+results/                           solver output goes here
 ```
+
+## How to read this repo (start here)
+
+1. Read `docs/TuMuPl-Beschreibung_cleanedUp.docx` — understand the problem
+2. Read `claude-modeling/problem_definition.md` — formal math definition
+3. Run `claude-modeling/examples/toy_model.py` — see a working 4-shift example
+4. Run `claude-modeling/model/ILP.py` — full model (needs Gurobi)
 
 ## Requirements
 
 - Python 3.10+
 - `gurobipy` with a valid Gurobi licence (student licence via Uni Siegen)
+- No extra packages needed for `toy_model.py`
 
-## Quick start
-
-```bash
-git clone https://github.com/poprjaduhhaa/Modellierungsseminar-Firestation
-cd Modellierungsseminar-Firestation
-python model/ILP.py
-```
-
-## Git workflow (for the team)
+## Git workflow
 
 ```bash
-git pull                            # always before you start
-# … edit files …
-git add data/shifts.py              # stage only what you changed
-git commit -m "short clear message"
+git pull                   # always before you start
+git add <file>
+git commit -m "message"
 git push
 ```
