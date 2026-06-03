@@ -2,7 +2,8 @@
 
 **Course:** Modellierungsseminar, Uni Siegen  
 **Supervisor:** Prof. Erwin Pesch  
-**Team:** 3 members
+**Team:** 3 members  
+**Collaborative environment:** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/poprjaduhhaa/Modellierungsseminar-Firestation/blob/main/snake_building.ipynb)
 **Collab Enviroment:** [Google Collab]([url](https://colab.research.google.com/github/poprjaduhhaa/Modellierungsseminar-Firestation/blob/main/snake_building.ipynb))
 
 ## Structure
