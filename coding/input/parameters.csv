@@ -1,0 +1,6 @@
+parameter	description	value
+min_rest	minimum break after one shift [min]	660
+max_cycle_length	maximum cycle lenght [snake weeks]	12
+obj_w_workers	"weight of objectiv ""minimize number of workers"" [0,1]"	1
+obj_w_fairness		0
+obj_w_...		0
