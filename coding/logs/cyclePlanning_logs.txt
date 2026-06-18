@@ -1,0 +1,5 @@
+2026-06-18 21:26:25 // STARTED the cycle planning process
+2026-06-18 21:26:25 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
+2026-06-18 21:26:25 // import successfull
+2026-06-18 21:26:25 // list of shift_objects built
+2026-06-18 21:26:25 // successfully finished cycle plan: found an optimal solution using 5 cycle weeks

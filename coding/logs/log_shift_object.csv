@@ -1,6 +1,6 @@
 ;shift_id;description;weekdays;start;end;required_staff;shift_class;shift_work_time_assignment;is_work_shift;required_qualification
-0;[00day000week];day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
-1;[night000week];night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
-2;[00dayweekend];day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
-3;[nightweekend];night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
-4;[00000freeday];free day;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00:00;06:00:00;0;1;nan;False;none
+0;[00day000week];day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7.0;2;nan;True;none
+1;[night000week];night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5.0;7;nan;True;none
+2;[00dayweekend];day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5.0;5;nan;True;none
+3;[nightweekend];night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5.0;10;nan;True;none
+4;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;;1;;False;

@@ -3,4 +3,3 @@
 [night000week];night shift week;Mon, Tue, Wed, Thu, Fri;16:15;07:00;5;7;;1;none
 [00dayweekend];day shift weekend;Sat, Sun;06:00;16:45;5;5;;1;none
 [nightweekend];night shift weekend;Sat, Sun;16:15;07:00;5;10;;1;none
-[00000freeday];free day;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;06:00;0;1;;0;none
