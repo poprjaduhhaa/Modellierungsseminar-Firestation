@@ -3,3 +3,13 @@
 2026-06-18 21:26:25 // import successfull
 2026-06-18 21:26:25 // list of shift_objects built
 2026-06-18 21:26:25 // successfully finished cycle plan: found an optimal solution using 5 cycle weeks
+2026-06-22 10:53:43 // STARTED the cycle planning process
+2026-06-22 10:53:43 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
+2026-06-22 10:53:43 // import successfull
+2026-06-22 10:53:43 // list of shift_objects built
+2026-06-22 10:53:44 // successfully finished cycle plan: found an optimal solution using 5 cycle weeks
+2026-06-22 10:57:12 // STARTED the cycle planning process
+2026-06-22 10:57:12 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
+2026-06-22 10:57:12 // import successfull
+2026-06-22 10:57:12 // list of shift_objects built
+2026-06-22 10:57:12 // successfully finished cycle plan: found an optimal solution using 5 cycle weeks
