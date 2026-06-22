@@ -1,6 +1,6 @@
-﻿shift_ID;shift_details;shift_weekdays;shift_start_time;shift_end_time;shift_required_staff;shift_class;shift_work_time_assignment;isWorkShift;[shift_required_qualification];;
-000001EARLY0;early day shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;14:00;5;1;;1;none;;
-000002LATE00;late day and afternoon shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;14:00;22:00;4;2;;1;none;;
-000003NIGHT0;night shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;22:00;06:00;3;5;;1;none;;
-000000FREEDY;free day;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;06:00;none;1;;0;none;;
-000004WHOLED;24h shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;06:00;none;10;;1;none;;
+﻿shift_ID;shift_details;shift_weekdays;shift_start_time;shift_end_time;shift_required_staff;shift_class;shift_work_time_assignment;isWorkShift;[shift_required_qualification]
+000001EARLY0;early day shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;14:00;5;1;;1;none
+000002LATE00;late day and afternoon shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;14:00;22:00;4;2;;1;none
+000003NIGHT0;night shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;22:00;06:00;3;5;;1;none
+000000FREEDY;free day;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;06:00;none;1;;0;none
+000004WHOLED;24h shift;Mon, Tue, Wed, Thu, Fri, Sat, Sun;06:00;06:00;none;10;;1;none
