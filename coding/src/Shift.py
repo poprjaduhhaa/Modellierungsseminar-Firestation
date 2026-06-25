@@ -28,3 +28,14 @@ def shift_duration_hours(shift) -> float:
     else:
         duration_min = end_min - start_min
     return duration_min / 60
+
+# Calculates minutes of rest between end of sh1 and start of sh2 on the next day.
+# Handles overnight shifts (e.g. 16:15->07:00) by adding 24h to end time.
+# Used to pre-compute incompatible shift pairs for MIN_REST constraint.
+def rest_minutes_between(sh1, sh2) -> int:
+    end_min = sh1.end.hour * 60 + sh1.end.minute
+    if sh1.end <= sh1.start:  # overnight shift
+        end_min += 24 * 60
+    next_start_min = 24 * 60 + sh2.start.hour * 60 + sh2.start.minute
+    return next_start_min - end_min
+
