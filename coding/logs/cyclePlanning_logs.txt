@@ -1,61 +1,8 @@
-2026-06-22 14:56:18 // STARTED the cycle planning process
-2026-06-22 14:56:18 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet.csv
-2026-06-22 14:56:18 // import successfull
-2026-06-22 14:56:18 // list of shift_objects built
-2026-06-22 14:56:18 // WorkShifts are defined as ['000001EARLY0_1', '000001EARLY0_2', '000001EARLY0_3', '000002LATE00_1', '000002LATE00_2']
-2026-06-22 14:56:18 //     Shifts are defined as ['000001EARLY0_1', '000001EARLY0_2', '000001EARLY0_3', '000002LATE00_1', '000002LATE00_2', '[freeDay]', '[spareShift]']
-2026-06-22 14:56:20 // successfully finished cycle plan: found an optimal solution using 6 cycle weeks
-2026-06-22 14:56:20 // 
-cycle week 1:
-2026-06-22 14:56:20 // 	day 1: [spareShift]
-2026-06-22 14:56:20 // 	day 2: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 3: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 4: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 5: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 6: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 7: [spareShift]
-2026-06-22 14:56:20 // 
-cycle week 2:
-2026-06-22 14:56:20 // 	day 1: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 2: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 3: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 4: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 5: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 6: [spareShift]
-2026-06-22 14:56:20 // 	day 7: 000002LATE00_2
-2026-06-22 14:56:20 // 
-cycle week 3:
-2026-06-22 14:56:20 // 	day 1: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 2: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 3: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 4: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 5: [spareShift]
-2026-06-22 14:56:20 // 	day 6: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 7: 000002LATE00_1
-2026-06-22 14:56:20 // 
-cycle week 4:
-2026-06-22 14:56:20 // 	day 1: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 2: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 3: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 4: [spareShift]
-2026-06-22 14:56:20 // 	day 5: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 6: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 7: 000001EARLY0_2
-2026-06-22 14:56:20 // 
-cycle week 5:
-2026-06-22 14:56:20 // 	day 1: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 2: [spareShift]
-2026-06-22 14:56:20 // 	day 3: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 4: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 5: 000001EARLY0_1
-2026-06-22 14:56:20 // 	day 6: 000002LATE00_1
-2026-06-22 14:56:20 // 	day 7: 000001EARLY0_3
-2026-06-22 14:56:20 // 
-cycle week 6:
-2026-06-22 14:56:20 // 	day 1: 000001EARLY0_2
-2026-06-22 14:56:20 // 	day 2: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 3: [spareShift]
-2026-06-22 14:56:20 // 	day 4: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 5: 000001EARLY0_3
-2026-06-22 14:56:20 // 	day 6: 000002LATE00_2
-2026-06-22 14:56:20 // 	day 7: 000001EARLY0_1
+2026-06-24 21:53:37 // STARTED the cycle planning process
+2026-06-24 21:53:37 // reading parameters from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\parameters.csv
+2026-06-24 21:53:37 // parameters loaded
+2026-06-24 21:53:37 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
+2026-06-24 21:53:37 // import successfull
+2026-06-24 21:53:37 // list of shift_objects built
+2026-06-24 21:53:37 // WorkShifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5']
+2026-06-24 21:53:37 //     Shifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5', '[freeDay]', '[spareShift]']
