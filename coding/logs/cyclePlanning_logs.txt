@@ -1,8 +1,807 @@
-2026-06-24 21:53:37 // STARTED the cycle planning process
-2026-06-24 21:53:37 // reading parameters from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\parameters.csv
-2026-06-24 21:53:37 // parameters loaded
-2026-06-24 21:53:37 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
-2026-06-24 21:53:37 // import successfull
-2026-06-24 21:53:37 // list of shift_objects built
-2026-06-24 21:53:37 // WorkShifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5']
-2026-06-24 21:53:37 //     Shifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5', '[freeDay]', '[spareShift]']
+2026-06-25 20:33:25 // STARTED the cycle planning process
+2026-06-25 20:33:25 // reading parameters from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\parameters.csv
+2026-06-25 20:33:25 // parameters loaded
+2026-06-25 20:33:25 // reading shift data set from file c:\Users\dirkb\Documents\GitHub\Modellierungsseminar-Firestation\coding\input\input_ShiftDataSet_Pesch.csv
+2026-06-25 20:33:25 // import successfull
+2026-06-25 20:33:25 // list of shift_objects built
+2026-06-25 20:33:25 // WorkShifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5']
+2026-06-25 20:33:25 //     Shifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5', '[freeDay]', '[spareShift]']
+2026-06-25 20:33:26 // successfully finished cycle plan: found an optimal solution using 22 cycle weeks
+2026-06-25 20:33:26 // 
+cycle week 1:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_1
+2026-06-25 20:33:26 // 	day 2: [00day000week]_1
+2026-06-25 20:33:26 // 	day 3: [00day000week]_1
+2026-06-25 20:33:26 // 	day 4: [00day000week]_1
+2026-06-25 20:33:26 // 	day 5: [00day000week]_1
+2026-06-25 20:33:26 // 	day 6: [00day000week]_1
+2026-06-25 20:33:26 // 	day 7: [00day000week]_1
+2026-06-25 20:33:26 // 
+cycle week 2:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_2
+2026-06-25 20:33:26 // 	day 2: [00day000week]_2
+2026-06-25 20:33:26 // 	day 3: [00day000week]_2
+2026-06-25 20:33:26 // 	day 4: [00day000week]_2
+2026-06-25 20:33:26 // 	day 5: [00day000week]_2
+2026-06-25 20:33:26 // 	day 6: [00day000week]_2
+2026-06-25 20:33:26 // 	day 7: [00day000week]_2
+2026-06-25 20:33:26 // 
+cycle week 3:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_3
+2026-06-25 20:33:26 // 	day 2: [00day000week]_3
+2026-06-25 20:33:26 // 	day 3: [00day000week]_3
+2026-06-25 20:33:26 // 	day 4: [00day000week]_3
+2026-06-25 20:33:26 // 	day 5: [00day000week]_3
+2026-06-25 20:33:26 // 	day 6: [00day000week]_3
+2026-06-25 20:33:26 // 	day 7: [00day000week]_3
+2026-06-25 20:33:26 // 
+cycle week 4:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_4
+2026-06-25 20:33:26 // 	day 2: [00day000week]_4
+2026-06-25 20:33:26 // 	day 3: [00day000week]_4
+2026-06-25 20:33:26 // 	day 4: [00day000week]_4
+2026-06-25 20:33:26 // 	day 5: [00day000week]_4
+2026-06-25 20:33:26 // 	day 6: [00day000week]_4
+2026-06-25 20:33:26 // 	day 7: [00day000week]_4
+2026-06-25 20:33:26 // 
+cycle week 5:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_5
+2026-06-25 20:33:26 // 	day 2: [00day000week]_5
+2026-06-25 20:33:26 // 	day 3: [00day000week]_5
+2026-06-25 20:33:26 // 	day 4: [00day000week]_5
+2026-06-25 20:33:26 // 	day 5: [00day000week]_5
+2026-06-25 20:33:26 // 	day 6: [00day000week]_5
+2026-06-25 20:33:26 // 	day 7: [00day000week]_5
+2026-06-25 20:33:26 // 
+cycle week 6:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_6
+2026-06-25 20:33:26 // 	day 2: [00day000week]_6
+2026-06-25 20:33:26 // 	day 3: [00day000week]_6
+2026-06-25 20:33:26 // 	day 4: [00day000week]_6
+2026-06-25 20:33:26 // 	day 5: [00day000week]_6
+2026-06-25 20:33:26 // 	day 6: [00day000week]_6
+2026-06-25 20:33:26 // 	day 7: [00day000week]_6
+2026-06-25 20:33:26 // 
+cycle week 7:
+2026-06-25 20:33:26 // 	day 1: [00day000week]_7
+2026-06-25 20:33:26 // 	day 2: [00day000week]_7
+2026-06-25 20:33:26 // 	day 3: [00day000week]_7
+2026-06-25 20:33:26 // 	day 4: [00day000week]_7
+2026-06-25 20:33:26 // 	day 5: [00day000week]_7
+2026-06-25 20:33:26 // 	day 6: [00day000week]_7
+2026-06-25 20:33:26 // 	day 7: [00day000week]_7
+2026-06-25 20:33:26 // 
+cycle week 8:
+2026-06-25 20:33:26 // 	day 1: [night000week]_1
+2026-06-25 20:33:26 // 	day 2: [night000week]_1
+2026-06-25 20:33:26 // 	day 3: [night000week]_1
+2026-06-25 20:33:26 // 	day 4: [night000week]_1
+2026-06-25 20:33:26 // 	day 5: [night000week]_1
+2026-06-25 20:33:26 // 	day 6: [night000week]_1
+2026-06-25 20:33:26 // 	day 7: [night000week]_1
+2026-06-25 20:33:26 // 
+cycle week 9:
+2026-06-25 20:33:26 // 	day 1: [night000week]_2
+2026-06-25 20:33:26 // 	day 2: [night000week]_2
+2026-06-25 20:33:26 // 	day 3: [night000week]_2
+2026-06-25 20:33:26 // 	day 4: [night000week]_2
+2026-06-25 20:33:26 // 	day 5: [night000week]_2
+2026-06-25 20:33:26 // 	day 6: [night000week]_2
+2026-06-25 20:33:26 // 	day 7: [night000week]_2
+2026-06-25 20:33:26 // 
+cycle week 10:
+2026-06-25 20:33:26 // 	day 1: [night000week]_3
+2026-06-25 20:33:26 // 	day 2: [night000week]_3
+2026-06-25 20:33:26 // 	day 3: [night000week]_3
+2026-06-25 20:33:26 // 	day 4: [night000week]_3
+2026-06-25 20:33:26 // 	day 5: [night000week]_3
+2026-06-25 20:33:26 // 	day 6: [night000week]_3
+2026-06-25 20:33:26 // 	day 7: [night000week]_3
+2026-06-25 20:33:26 // 
+cycle week 11:
+2026-06-25 20:33:26 // 	day 1: [night000week]_4
+2026-06-25 20:33:26 // 	day 2: [night000week]_4
+2026-06-25 20:33:26 // 	day 3: [night000week]_4
+2026-06-25 20:33:26 // 	day 4: [night000week]_4
+2026-06-25 20:33:26 // 	day 5: [night000week]_4
+2026-06-25 20:33:26 // 	day 6: [night000week]_4
+2026-06-25 20:33:26 // 	day 7: [night000week]_4
+2026-06-25 20:33:26 // 
+cycle week 12:
+2026-06-25 20:33:26 // 	day 1: [night000week]_5
+2026-06-25 20:33:26 // 	day 2: [night000week]_5
+2026-06-25 20:33:26 // 	day 3: [night000week]_5
+2026-06-25 20:33:26 // 	day 4: [night000week]_5
+2026-06-25 20:33:26 // 	day 5: [night000week]_5
+2026-06-25 20:33:26 // 	day 6: [night000week]_5
+2026-06-25 20:33:26 // 	day 7: [night000week]_5
+2026-06-25 20:33:26 // 
+cycle week 13:
+2026-06-25 20:33:26 // 	day 1: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 2: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 3: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 4: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 5: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 6: [00dayweekend]_1
+2026-06-25 20:33:26 // 	day 7: [00dayweekend]_1
+2026-06-25 20:33:26 // 
+cycle week 14:
+2026-06-25 20:33:26 // 	day 1: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 2: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 3: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 4: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 5: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 6: [00dayweekend]_2
+2026-06-25 20:33:26 // 	day 7: [00dayweekend]_2
+2026-06-25 20:33:26 // 
+cycle week 15:
+2026-06-25 20:33:26 // 	day 1: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 2: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 3: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 4: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 5: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 6: [00dayweekend]_3
+2026-06-25 20:33:26 // 	day 7: [00dayweekend]_3
+2026-06-25 20:33:26 // 
+cycle week 16:
+2026-06-25 20:33:26 // 	day 1: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 2: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 3: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 4: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 5: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 6: [00dayweekend]_4
+2026-06-25 20:33:26 // 	day 7: [00dayweekend]_4
+2026-06-25 20:33:26 // 
+cycle week 17:
+2026-06-25 20:33:26 // 	day 1: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 2: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 3: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 4: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 5: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 6: [00dayweekend]_5
+2026-06-25 20:33:26 // 	day 7: [00dayweekend]_5
+2026-06-25 20:33:26 // 
+cycle week 18:
+2026-06-25 20:33:26 // 	day 1: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 2: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 3: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 4: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 5: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 6: [nightweekend]_1
+2026-06-25 20:33:26 // 	day 7: [nightweekend]_1
+2026-06-25 20:33:26 // 
+cycle week 19:
+2026-06-25 20:33:26 // 	day 1: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 2: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 3: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 4: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 5: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 6: [nightweekend]_2
+2026-06-25 20:33:26 // 	day 7: [nightweekend]_2
+2026-06-25 20:33:26 // 
+cycle week 20:
+2026-06-25 20:33:26 // 	day 1: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 2: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 3: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 4: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 5: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 6: [nightweekend]_3
+2026-06-25 20:33:26 // 	day 7: [nightweekend]_3
+2026-06-25 20:33:26 // 
+cycle week 21:
+2026-06-25 20:33:26 // 	day 1: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 2: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 3: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 4: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 5: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 6: [nightweekend]_4
+2026-06-25 20:33:26 // 	day 7: [nightweekend]_4
+2026-06-25 20:33:26 // 
+cycle week 22:
+2026-06-25 20:33:26 // 	day 1: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 2: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 3: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 4: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 5: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 6: [nightweekend]_5
+2026-06-25 20:33:26 // 	day 7: [nightweekend]_5
+2026-06-25 20:33:44 // successfully finished cycle plan: found an optimal solution using 22 cycle weeks
+2026-06-25 20:33:44 // 
+cycle week 1:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_1
+2026-06-25 20:33:44 // 	day 2: [00day000week]_1
+2026-06-25 20:33:44 // 	day 3: [00day000week]_1
+2026-06-25 20:33:44 // 	day 4: [00day000week]_1
+2026-06-25 20:33:44 // 	day 5: [00day000week]_1
+2026-06-25 20:33:44 // 	day 6: [00day000week]_1
+2026-06-25 20:33:44 // 	day 7: [00day000week]_1
+2026-06-25 20:33:44 // 
+cycle week 2:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_2
+2026-06-25 20:33:44 // 	day 2: [00day000week]_2
+2026-06-25 20:33:44 // 	day 3: [00day000week]_2
+2026-06-25 20:33:44 // 	day 4: [00day000week]_2
+2026-06-25 20:33:44 // 	day 5: [00day000week]_2
+2026-06-25 20:33:44 // 	day 6: [00day000week]_2
+2026-06-25 20:33:44 // 	day 7: [00day000week]_2
+2026-06-25 20:33:44 // 
+cycle week 3:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_3
+2026-06-25 20:33:44 // 	day 2: [00day000week]_3
+2026-06-25 20:33:44 // 	day 3: [00day000week]_3
+2026-06-25 20:33:44 // 	day 4: [00day000week]_3
+2026-06-25 20:33:44 // 	day 5: [00day000week]_3
+2026-06-25 20:33:44 // 	day 6: [00day000week]_3
+2026-06-25 20:33:44 // 	day 7: [00day000week]_3
+2026-06-25 20:33:44 // 
+cycle week 4:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_4
+2026-06-25 20:33:44 // 	day 2: [00day000week]_4
+2026-06-25 20:33:44 // 	day 3: [00day000week]_4
+2026-06-25 20:33:44 // 	day 4: [00day000week]_4
+2026-06-25 20:33:44 // 	day 5: [00day000week]_4
+2026-06-25 20:33:44 // 	day 6: [00day000week]_4
+2026-06-25 20:33:44 // 	day 7: [00day000week]_4
+2026-06-25 20:33:44 // 
+cycle week 5:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_5
+2026-06-25 20:33:44 // 	day 2: [00day000week]_5
+2026-06-25 20:33:44 // 	day 3: [00day000week]_5
+2026-06-25 20:33:44 // 	day 4: [00day000week]_5
+2026-06-25 20:33:44 // 	day 5: [00day000week]_5
+2026-06-25 20:33:44 // 	day 6: [00day000week]_5
+2026-06-25 20:33:44 // 	day 7: [00day000week]_5
+2026-06-25 20:33:44 // 
+cycle week 6:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_6
+2026-06-25 20:33:44 // 	day 2: [00day000week]_6
+2026-06-25 20:33:44 // 	day 3: [00day000week]_6
+2026-06-25 20:33:44 // 	day 4: [00day000week]_6
+2026-06-25 20:33:44 // 	day 5: [00day000week]_6
+2026-06-25 20:33:44 // 	day 6: [00day000week]_6
+2026-06-25 20:33:44 // 	day 7: [00day000week]_6
+2026-06-25 20:33:44 // 
+cycle week 7:
+2026-06-25 20:33:44 // 	day 1: [00day000week]_7
+2026-06-25 20:33:44 // 	day 2: [00day000week]_7
+2026-06-25 20:33:44 // 	day 3: [00day000week]_7
+2026-06-25 20:33:44 // 	day 4: [00day000week]_7
+2026-06-25 20:33:44 // 	day 5: [00day000week]_7
+2026-06-25 20:33:44 // 	day 6: [00day000week]_7
+2026-06-25 20:33:44 // 	day 7: [00day000week]_7
+2026-06-25 20:33:44 // 
+cycle week 8:
+2026-06-25 20:33:44 // 	day 1: [night000week]_1
+2026-06-25 20:33:44 // 	day 2: [night000week]_1
+2026-06-25 20:33:44 // 	day 3: [night000week]_1
+2026-06-25 20:33:44 // 	day 4: [night000week]_1
+2026-06-25 20:33:44 // 	day 5: [night000week]_1
+2026-06-25 20:33:44 // 	day 6: [night000week]_1
+2026-06-25 20:33:44 // 	day 7: [night000week]_1
+2026-06-25 20:33:44 // 
+cycle week 9:
+2026-06-25 20:33:44 // 	day 1: [night000week]_2
+2026-06-25 20:33:44 // 	day 2: [night000week]_2
+2026-06-25 20:33:44 // 	day 3: [night000week]_2
+2026-06-25 20:33:44 // 	day 4: [night000week]_2
+2026-06-25 20:33:44 // 	day 5: [night000week]_2
+2026-06-25 20:33:44 // 	day 6: [night000week]_2
+2026-06-25 20:33:44 // 	day 7: [night000week]_2
+2026-06-25 20:33:44 // 
+cycle week 10:
+2026-06-25 20:33:44 // 	day 1: [night000week]_3
+2026-06-25 20:33:44 // 	day 2: [night000week]_3
+2026-06-25 20:33:44 // 	day 3: [night000week]_3
+2026-06-25 20:33:44 // 	day 4: [night000week]_3
+2026-06-25 20:33:44 // 	day 5: [night000week]_3
+2026-06-25 20:33:44 // 	day 6: [night000week]_3
+2026-06-25 20:33:44 // 	day 7: [night000week]_3
+2026-06-25 20:33:44 // 
+cycle week 11:
+2026-06-25 20:33:44 // 	day 1: [night000week]_4
+2026-06-25 20:33:44 // 	day 2: [night000week]_4
+2026-06-25 20:33:44 // 	day 3: [night000week]_4
+2026-06-25 20:33:44 // 	day 4: [night000week]_4
+2026-06-25 20:33:44 // 	day 5: [night000week]_4
+2026-06-25 20:33:44 // 	day 6: [night000week]_4
+2026-06-25 20:33:44 // 	day 7: [night000week]_4
+2026-06-25 20:33:44 // 
+cycle week 12:
+2026-06-25 20:33:44 // 	day 1: [night000week]_5
+2026-06-25 20:33:44 // 	day 2: [night000week]_5
+2026-06-25 20:33:44 // 	day 3: [night000week]_5
+2026-06-25 20:33:44 // 	day 4: [night000week]_5
+2026-06-25 20:33:44 // 	day 5: [night000week]_5
+2026-06-25 20:33:44 // 	day 6: [night000week]_5
+2026-06-25 20:33:44 // 	day 7: [night000week]_5
+2026-06-25 20:33:44 // 
+cycle week 13:
+2026-06-25 20:33:44 // 	day 1: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 2: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 3: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 4: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 5: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 6: [00dayweekend]_1
+2026-06-25 20:33:44 // 	day 7: [00dayweekend]_1
+2026-06-25 20:33:44 // 
+cycle week 14:
+2026-06-25 20:33:44 // 	day 1: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 2: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 3: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 4: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 5: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 6: [00dayweekend]_2
+2026-06-25 20:33:44 // 	day 7: [00dayweekend]_2
+2026-06-25 20:33:44 // 
+cycle week 15:
+2026-06-25 20:33:44 // 	day 1: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 2: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 3: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 4: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 5: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 6: [00dayweekend]_3
+2026-06-25 20:33:44 // 	day 7: [00dayweekend]_3
+2026-06-25 20:33:44 // 
+cycle week 16:
+2026-06-25 20:33:44 // 	day 1: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 2: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 3: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 4: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 5: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 6: [00dayweekend]_4
+2026-06-25 20:33:44 // 	day 7: [00dayweekend]_4
+2026-06-25 20:33:44 // 
+cycle week 17:
+2026-06-25 20:33:44 // 	day 1: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 2: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 3: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 4: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 5: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 6: [00dayweekend]_5
+2026-06-25 20:33:44 // 	day 7: [00dayweekend]_5
+2026-06-25 20:33:44 // 
+cycle week 18:
+2026-06-25 20:33:44 // 	day 1: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 2: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 3: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 4: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 5: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 6: [nightweekend]_1
+2026-06-25 20:33:44 // 	day 7: [nightweekend]_1
+2026-06-25 20:33:44 // 
+cycle week 19:
+2026-06-25 20:33:44 // 	day 1: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 2: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 3: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 4: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 5: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 6: [nightweekend]_2
+2026-06-25 20:33:44 // 	day 7: [nightweekend]_2
+2026-06-25 20:33:44 // 
+cycle week 20:
+2026-06-25 20:33:44 // 	day 1: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 2: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 3: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 4: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 5: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 6: [nightweekend]_3
+2026-06-25 20:33:44 // 	day 7: [nightweekend]_3
+2026-06-25 20:33:44 // 
+cycle week 21:
+2026-06-25 20:33:44 // 	day 1: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 2: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 3: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 4: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 5: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 6: [nightweekend]_4
+2026-06-25 20:33:44 // 	day 7: [nightweekend]_4
+2026-06-25 20:33:44 // 
+cycle week 22:
+2026-06-25 20:33:44 // 	day 1: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 2: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 3: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 4: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 5: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 6: [nightweekend]_5
+2026-06-25 20:33:44 // 	day 7: [nightweekend]_5
+2026-06-25 20:34:47 // successfully finished cycle plan: found an optimal solution using 22 cycle weeks
+2026-06-25 20:34:47 // 
+cycle week 1:
+2026-06-25 20:35:06 // successfully finished cycle plan: found an optimal solution using 22 cycle weeks
+2026-06-25 20:35:06 // 
+cycle week 1:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_1
+2026-06-25 20:35:06 // 	day 2: [00day000week]_1
+2026-06-25 20:35:06 // 	day 3: [00day000week]_1
+2026-06-25 20:35:06 // 	day 4: [00day000week]_1
+2026-06-25 20:35:06 // 	day 5: [00day000week]_1
+2026-06-25 20:35:06 // 	day 6: [00day000week]_1
+2026-06-25 20:35:06 // 	day 7: [00day000week]_1
+2026-06-25 20:35:06 // 
+cycle week 2:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_2
+2026-06-25 20:35:06 // 	day 2: [00day000week]_2
+2026-06-25 20:35:06 // 	day 3: [00day000week]_2
+2026-06-25 20:35:06 // 	day 4: [00day000week]_2
+2026-06-25 20:35:06 // 	day 5: [00day000week]_2
+2026-06-25 20:35:06 // 	day 6: [00day000week]_2
+2026-06-25 20:35:06 // 	day 7: [00day000week]_2
+2026-06-25 20:35:06 // 
+cycle week 3:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_3
+2026-06-25 20:35:06 // 	day 2: [00day000week]_3
+2026-06-25 20:35:06 // 	day 3: [00day000week]_3
+2026-06-25 20:35:06 // 	day 4: [00day000week]_3
+2026-06-25 20:35:06 // 	day 5: [00day000week]_3
+2026-06-25 20:35:06 // 	day 6: [00day000week]_3
+2026-06-25 20:35:06 // 	day 7: [00day000week]_3
+2026-06-25 20:35:06 // 
+cycle week 4:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_4
+2026-06-25 20:35:06 // 	day 2: [00day000week]_4
+2026-06-25 20:35:06 // 	day 3: [00day000week]_4
+2026-06-25 20:35:06 // 	day 4: [00day000week]_4
+2026-06-25 20:35:06 // 	day 5: [00day000week]_4
+2026-06-25 20:35:06 // 	day 6: [00day000week]_4
+2026-06-25 20:35:06 // 	day 7: [00day000week]_4
+2026-06-25 20:35:06 // 
+cycle week 5:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_5
+2026-06-25 20:35:06 // 	day 2: [00day000week]_5
+2026-06-25 20:35:06 // 	day 3: [00day000week]_5
+2026-06-25 20:35:06 // 	day 4: [00day000week]_5
+2026-06-25 20:35:06 // 	day 5: [00day000week]_5
+2026-06-25 20:35:06 // 	day 6: [00day000week]_5
+2026-06-25 20:35:06 // 	day 7: [00day000week]_5
+2026-06-25 20:35:06 // 
+cycle week 6:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_6
+2026-06-25 20:35:06 // 	day 2: [00day000week]_6
+2026-06-25 20:35:06 // 	day 3: [00day000week]_6
+2026-06-25 20:35:06 // 	day 4: [00day000week]_6
+2026-06-25 20:35:06 // 	day 5: [00day000week]_6
+2026-06-25 20:35:06 // 	day 6: [00day000week]_6
+2026-06-25 20:35:06 // 	day 7: [00day000week]_6
+2026-06-25 20:35:06 // 
+cycle week 7:
+2026-06-25 20:35:06 // 	day 1: [00day000week]_7
+2026-06-25 20:35:06 // 	day 2: [00day000week]_7
+2026-06-25 20:35:06 // 	day 3: [00day000week]_7
+2026-06-25 20:35:06 // 	day 4: [00day000week]_7
+2026-06-25 20:35:06 // 	day 5: [00day000week]_7
+2026-06-25 20:35:06 // 	day 6: [00day000week]_7
+2026-06-25 20:35:06 // 	day 7: [00day000week]_7
+2026-06-25 20:35:06 // 
+cycle week 8:
+2026-06-25 20:35:06 // 	day 1: [night000week]_1
+2026-06-25 20:35:06 // 	day 2: [night000week]_1
+2026-06-25 20:35:06 // 	day 3: [night000week]_1
+2026-06-25 20:35:06 // 	day 4: [night000week]_1
+2026-06-25 20:35:06 // 	day 5: [night000week]_1
+2026-06-25 20:35:06 // 	day 6: [night000week]_1
+2026-06-25 20:35:06 // 	day 7: [night000week]_1
+2026-06-25 20:35:06 // 
+cycle week 9:
+2026-06-25 20:35:06 // 	day 1: [night000week]_2
+2026-06-25 20:35:06 // 	day 2: [night000week]_2
+2026-06-25 20:35:06 // 	day 3: [night000week]_2
+2026-06-25 20:35:06 // 	day 4: [night000week]_2
+2026-06-25 20:35:06 // 	day 5: [night000week]_2
+2026-06-25 20:35:06 // 	day 6: [night000week]_2
+2026-06-25 20:35:06 // 	day 7: [night000week]_2
+2026-06-25 20:35:06 // 
+cycle week 10:
+2026-06-25 20:35:06 // 	day 1: [night000week]_3
+2026-06-25 20:35:06 // 	day 2: [night000week]_3
+2026-06-25 20:35:06 // 	day 3: [night000week]_3
+2026-06-25 20:35:06 // 	day 4: [night000week]_3
+2026-06-25 20:35:06 // 	day 5: [night000week]_3
+2026-06-25 20:35:06 // 	day 6: [night000week]_3
+2026-06-25 20:35:06 // 	day 7: [night000week]_3
+2026-06-25 20:35:06 // 
+cycle week 11:
+2026-06-25 20:35:06 // 	day 1: [night000week]_4
+2026-06-25 20:35:06 // 	day 2: [night000week]_4
+2026-06-25 20:35:06 // 	day 3: [night000week]_4
+2026-06-25 20:35:06 // 	day 4: [night000week]_4
+2026-06-25 20:35:06 // 	day 5: [night000week]_4
+2026-06-25 20:35:06 // 	day 6: [night000week]_4
+2026-06-25 20:35:06 // 	day 7: [night000week]_4
+2026-06-25 20:35:06 // 
+cycle week 12:
+2026-06-25 20:35:06 // 	day 1: [night000week]_5
+2026-06-25 20:35:06 // 	day 2: [night000week]_5
+2026-06-25 20:35:06 // 	day 3: [night000week]_5
+2026-06-25 20:35:06 // 	day 4: [night000week]_5
+2026-06-25 20:35:06 // 	day 5: [night000week]_5
+2026-06-25 20:35:06 // 	day 6: [night000week]_5
+2026-06-25 20:35:06 // 	day 7: [night000week]_5
+2026-06-25 20:35:06 // 
+cycle week 13:
+2026-06-25 20:35:06 // 	day 1: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 2: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 3: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 4: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 5: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 6: [00dayweekend]_1
+2026-06-25 20:35:06 // 	day 7: [00dayweekend]_1
+2026-06-25 20:35:06 // 
+cycle week 14:
+2026-06-25 20:35:06 // 	day 1: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 2: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 3: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 4: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 5: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 6: [00dayweekend]_2
+2026-06-25 20:35:06 // 	day 7: [00dayweekend]_2
+2026-06-25 20:35:06 // 
+cycle week 15:
+2026-06-25 20:35:06 // 	day 1: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 2: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 3: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 4: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 5: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 6: [00dayweekend]_3
+2026-06-25 20:35:06 // 	day 7: [00dayweekend]_3
+2026-06-25 20:35:06 // 
+cycle week 16:
+2026-06-25 20:35:06 // 	day 1: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 2: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 3: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 4: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 5: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 6: [00dayweekend]_4
+2026-06-25 20:35:06 // 	day 7: [00dayweekend]_4
+2026-06-25 20:35:06 // 
+cycle week 17:
+2026-06-25 20:35:06 // 	day 1: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 2: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 3: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 4: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 5: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 6: [00dayweekend]_5
+2026-06-25 20:35:06 // 	day 7: [00dayweekend]_5
+2026-06-25 20:35:06 // 
+cycle week 18:
+2026-06-25 20:35:06 // 	day 1: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 2: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 3: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 4: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 5: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 6: [nightweekend]_1
+2026-06-25 20:35:06 // 	day 7: [nightweekend]_1
+2026-06-25 20:35:06 // 
+cycle week 19:
+2026-06-25 20:35:06 // 	day 1: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 2: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 3: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 4: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 5: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 6: [nightweekend]_2
+2026-06-25 20:35:06 // 	day 7: [nightweekend]_2
+2026-06-25 20:35:06 // 
+cycle week 20:
+2026-06-25 20:35:06 // 	day 1: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 2: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 3: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 4: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 5: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 6: [nightweekend]_3
+2026-06-25 20:35:06 // 	day 7: [nightweekend]_3
+2026-06-25 20:35:06 // 
+cycle week 21:
+2026-06-25 20:35:06 // 	day 1: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 2: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 3: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 4: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 5: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 6: [nightweekend]_4
+2026-06-25 20:35:06 // 	day 7: [nightweekend]_4
+2026-06-25 20:35:06 // 
+cycle week 22:
+2026-06-25 20:35:06 // 	day 1: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 2: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 3: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 4: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 5: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 6: [nightweekend]_5
+2026-06-25 20:35:06 // 	day 7: [nightweekend]_5
+2026-06-25 20:35:38 // successfully finished cycle plan: found an optimal solution using 22 cycle weeks
+2026-06-25 20:35:38 // 
+cycle week 1:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_1
+2026-06-25 20:35:38 // 	day 2: [00day000week]_1
+2026-06-25 20:35:38 // 	day 3: [00day000week]_1
+2026-06-25 20:35:38 // 	day 4: [00day000week]_1
+2026-06-25 20:35:38 // 	day 5: [00day000week]_1
+2026-06-25 20:35:38 // 	day 6: [00day000week]_1
+2026-06-25 20:35:38 // 	day 7: [00day000week]_1
+2026-06-25 20:35:38 // 
+cycle week 2:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_2
+2026-06-25 20:35:38 // 	day 2: [00day000week]_2
+2026-06-25 20:35:38 // 	day 3: [00day000week]_2
+2026-06-25 20:35:38 // 	day 4: [00day000week]_2
+2026-06-25 20:35:38 // 	day 5: [00day000week]_2
+2026-06-25 20:35:38 // 	day 6: [00day000week]_2
+2026-06-25 20:35:38 // 	day 7: [00day000week]_2
+2026-06-25 20:35:38 // 
+cycle week 3:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_3
+2026-06-25 20:35:38 // 	day 2: [00day000week]_3
+2026-06-25 20:35:38 // 	day 3: [00day000week]_3
+2026-06-25 20:35:38 // 	day 4: [00day000week]_3
+2026-06-25 20:35:38 // 	day 5: [00day000week]_3
+2026-06-25 20:35:38 // 	day 6: [00day000week]_3
+2026-06-25 20:35:38 // 	day 7: [00day000week]_3
+2026-06-25 20:35:38 // 
+cycle week 4:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_4
+2026-06-25 20:35:38 // 	day 2: [00day000week]_4
+2026-06-25 20:35:38 // 	day 3: [00day000week]_4
+2026-06-25 20:35:38 // 	day 4: [00day000week]_4
+2026-06-25 20:35:38 // 	day 5: [00day000week]_4
+2026-06-25 20:35:38 // 	day 6: [00day000week]_4
+2026-06-25 20:35:38 // 	day 7: [00day000week]_4
+2026-06-25 20:35:38 // 
+cycle week 5:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_5
+2026-06-25 20:35:38 // 	day 2: [00day000week]_5
+2026-06-25 20:35:38 // 	day 3: [00day000week]_5
+2026-06-25 20:35:38 // 	day 4: [00day000week]_5
+2026-06-25 20:35:38 // 	day 5: [00day000week]_5
+2026-06-25 20:35:38 // 	day 6: [00day000week]_5
+2026-06-25 20:35:38 // 	day 7: [00day000week]_5
+2026-06-25 20:35:38 // 
+cycle week 6:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_6
+2026-06-25 20:35:38 // 	day 2: [00day000week]_6
+2026-06-25 20:35:38 // 	day 3: [00day000week]_6
+2026-06-25 20:35:38 // 	day 4: [00day000week]_6
+2026-06-25 20:35:38 // 	day 5: [00day000week]_6
+2026-06-25 20:35:38 // 	day 6: [00day000week]_6
+2026-06-25 20:35:38 // 	day 7: [00day000week]_6
+2026-06-25 20:35:38 // 
+cycle week 7:
+2026-06-25 20:35:38 // 	day 1: [00day000week]_7
+2026-06-25 20:35:38 // 	day 2: [00day000week]_7
+2026-06-25 20:35:38 // 	day 3: [00day000week]_7
+2026-06-25 20:35:38 // 	day 4: [00day000week]_7
+2026-06-25 20:35:38 // 	day 5: [00day000week]_7
+2026-06-25 20:35:38 // 	day 6: [00day000week]_7
+2026-06-25 20:35:38 // 	day 7: [00day000week]_7
+2026-06-25 20:35:38 // 
+cycle week 8:
+2026-06-25 20:35:38 // 	day 1: [night000week]_1
+2026-06-25 20:35:38 // 	day 2: [night000week]_1
+2026-06-25 20:35:38 // 	day 3: [night000week]_1
+2026-06-25 20:35:38 // 	day 4: [night000week]_1
+2026-06-25 20:35:38 // 	day 5: [night000week]_1
+2026-06-25 20:35:38 // 	day 6: [night000week]_1
+2026-06-25 20:35:38 // 	day 7: [night000week]_1
+2026-06-25 20:35:38 // 
+cycle week 9:
+2026-06-25 20:35:38 // 	day 1: [night000week]_2
+2026-06-25 20:35:38 // 	day 2: [night000week]_2
+2026-06-25 20:35:38 // 	day 3: [night000week]_2
+2026-06-25 20:35:38 // 	day 4: [night000week]_2
+2026-06-25 20:35:38 // 	day 5: [night000week]_2
+2026-06-25 20:35:38 // 	day 6: [night000week]_2
+2026-06-25 20:35:38 // 	day 7: [night000week]_2
+2026-06-25 20:35:38 // 
+cycle week 10:
+2026-06-25 20:35:38 // 	day 1: [night000week]_3
+2026-06-25 20:35:38 // 	day 2: [night000week]_3
+2026-06-25 20:35:38 // 	day 3: [night000week]_3
+2026-06-25 20:35:38 // 	day 4: [night000week]_3
+2026-06-25 20:35:38 // 	day 5: [night000week]_3
+2026-06-25 20:35:38 // 	day 6: [night000week]_3
+2026-06-25 20:35:38 // 	day 7: [night000week]_3
+2026-06-25 20:35:38 // 
+cycle week 11:
+2026-06-25 20:35:38 // 	day 1: [night000week]_4
+2026-06-25 20:35:38 // 	day 2: [night000week]_4
+2026-06-25 20:35:38 // 	day 3: [night000week]_4
+2026-06-25 20:35:38 // 	day 4: [night000week]_4
+2026-06-25 20:35:38 // 	day 5: [night000week]_4
+2026-06-25 20:35:38 // 	day 6: [night000week]_4
+2026-06-25 20:35:38 // 	day 7: [night000week]_4
+2026-06-25 20:35:38 // 
+cycle week 12:
+2026-06-25 20:35:38 // 	day 1: [night000week]_5
+2026-06-25 20:35:38 // 	day 2: [night000week]_5
+2026-06-25 20:35:38 // 	day 3: [night000week]_5
+2026-06-25 20:35:38 // 	day 4: [night000week]_5
+2026-06-25 20:35:38 // 	day 5: [night000week]_5
+2026-06-25 20:35:38 // 	day 6: [night000week]_5
+2026-06-25 20:35:38 // 	day 7: [night000week]_5
+2026-06-25 20:35:38 // 
+cycle week 13:
+2026-06-25 20:35:38 // 	day 1: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 2: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 3: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 4: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 5: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 6: [00dayweekend]_1
+2026-06-25 20:35:38 // 	day 7: [00dayweekend]_1
+2026-06-25 20:35:38 // 
+cycle week 14:
+2026-06-25 20:35:38 // 	day 1: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 2: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 3: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 4: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 5: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 6: [00dayweekend]_2
+2026-06-25 20:35:38 // 	day 7: [00dayweekend]_2
+2026-06-25 20:35:38 // 
+cycle week 15:
+2026-06-25 20:35:38 // 	day 1: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 2: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 3: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 4: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 5: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 6: [00dayweekend]_3
+2026-06-25 20:35:38 // 	day 7: [00dayweekend]_3
+2026-06-25 20:35:38 // 
+cycle week 16:
+2026-06-25 20:35:38 // 	day 1: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 2: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 3: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 4: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 5: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 6: [00dayweekend]_4
+2026-06-25 20:35:38 // 	day 7: [00dayweekend]_4
+2026-06-25 20:35:38 // 
+cycle week 17:
+2026-06-25 20:35:38 // 	day 1: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 2: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 3: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 4: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 5: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 6: [00dayweekend]_5
+2026-06-25 20:35:38 // 	day 7: [00dayweekend]_5
+2026-06-25 20:35:38 // 
+cycle week 18:
+2026-06-25 20:35:38 // 	day 1: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 2: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 3: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 4: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 5: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 6: [nightweekend]_1
+2026-06-25 20:35:38 // 	day 7: [nightweekend]_1
+2026-06-25 20:35:38 // 
+cycle week 19:
+2026-06-25 20:35:38 // 	day 1: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 2: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 3: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 4: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 5: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 6: [nightweekend]_2
+2026-06-25 20:35:38 // 	day 7: [nightweekend]_2
+2026-06-25 20:35:38 // 
+cycle week 20:
+2026-06-25 20:35:38 // 	day 1: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 2: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 3: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 4: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 5: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 6: [nightweekend]_3
+2026-06-25 20:35:38 // 	day 7: [nightweekend]_3
+2026-06-25 20:35:38 // 
+cycle week 21:
+2026-06-25 20:35:38 // 	day 1: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 2: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 3: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 4: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 5: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 6: [nightweekend]_4
+2026-06-25 20:35:38 // 	day 7: [nightweekend]_4
+2026-06-25 20:35:38 // 
+cycle week 22:
+2026-06-25 20:35:38 // 	day 1: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 2: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 3: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 4: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 5: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 6: [nightweekend]_5
+2026-06-25 20:35:38 // 	day 7: [nightweekend]_5
