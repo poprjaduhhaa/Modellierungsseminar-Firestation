@@ -15,7 +15,7 @@ class Shift:
     end: dt.time                     # end time of the shift (hh:mm)
     required_staff: int           # number of worker required for the shift
     shift_class: int              # shift class relecting attractiveness of the shift (values 1-10)
-    shift_work_time_assignment: str  # 
+    shift_work_time_assignment: int  # 
     is_work_shift: bool           # boolean to reflect if a shift is treated as work-shift or not (eg "free_day" is False)
     required_qualification: str  # qualification needs for the shift (relevant for mapping suitable staff members)
     
