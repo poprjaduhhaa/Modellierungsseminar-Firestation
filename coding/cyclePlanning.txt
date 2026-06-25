@@ -13,69 +13,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 24,
-      "id": "C2btsMxd7ox1",
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "C2btsMxd7ox1",
-        "outputId": "9285d671-11de-4f60-fcfd-d3ca77f78f39"
-      },
-      "outputs": [],
-      "source": [
-        "# try:\n",
-        "#     !pip install gurobipy\n",
-        "# except:\n",
-        "#     %pip install gurobipy"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 25,
-      "id": "64b67ddb",
-      "metadata": {},
-      "outputs": [],
-      "source": [
-        "# test"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 26,
-      "id": "iRhpiGt_77uZ",
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "iRhpiGt_77uZ",
-        "outputId": "c13831d2-ea14-45ad-e4a2-d2e9f6611f5a"
-      },
-      "outputs": [
-        {
-          "name": "stdout",
-          "output_type": "stream",
-          "text": [
-            "[WinError 3] Das System kann den angegebenen Pfad nicht finden: '/content/Modellierungsseminar-Firestation/coding'\n",
-            "c:\\Users\\dirkb\\Documents\\GitHub\\Modellierungsseminar-Firestation\\coding\n"
-          ]
-        },
-        {
-          "name": "stderr",
-          "output_type": "stream",
-          "text": [
-            "fatal: destination path 'Modellierungsseminar-Firestation' already exists and is not an empty directory.\n"
-          ]
-        }
-      ],
-      "source": [
-        "!git clone -b feature/shift-objects https://github.com/poprjaduhhaa/Modellierungsseminar-Firestation.git\n",
-        "%cd /content/Modellierungsseminar-Firestation/coding"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 27,
+      "execution_count": 53,
       "id": "9b5644a0",
       "metadata": {
         "id": "9b5644a0"
@@ -104,45 +42,15 @@
     },
     {
       "cell_type": "markdown",
-      "id": "6b5516d2",
-      "metadata": {
-        "id": "6b5516d2"
-      },
-      "source": [
-        "### inputs and parameters"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 28,
-      "id": "4c4af866",
+      "id": "987ae535",
       "metadata": {},
-      "outputs": [],
       "source": [
-        "# global static variables\n",
-        "\n",
-        "# more relevant for more complex models going forward\n",
-        "MAX_CYCLE_WEEKS = 365  # in future this shall be user's input => too long snakes do not help to ensure \"fair\" distribution of shifts\n",
-        "NB_CYLCEs = 2 # number of cycles (for split by qualification)\n",
-        "\n",
-        "DICT_WEEKDAYS = {'Mon':1,'Tue':2,'Wed':3,'Thu':4,'Fri':5,'Sat':6,'Sun':7,\n",
-        "                 'Monday':1,'Tuesday':2,'Wednesday':3,'Thursday':4,'Friday':5,'Saturday':6,'Sunday':7,\n",
-        "                 'Mo':1,'Tu':2,'We':3,'Th':4,'Fr':5,'Sa':6,'Su':7,\n",
-        "                 '1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7\n",
-        "                 }\n",
-        "DICT_WEEKDAYS_RETURN = {1: \"Monday\", 2: \"Tuesday\", 3: \"Wednesday\", 4: \"Thursday\", 5: \"Friday\", 6: \"Saturday\", 7: \"Sunday\"}\n",
-        "\n",
-        "# determine folder structure for inputs and outputs\n",
-        "PROJECT_ROOT = Path.cwd() # main folder of the code\n",
-        "FOLDER_INPUT =  PROJECT_ROOT / \"input\" # data input\n",
-        "FOLDER_LOGS = PROJECT_ROOT / \"logs\" # folder for log files, eg exorts of data sets for more transparency\n",
-        "FOLDER_OUTPUT = \"output/\"\n",
-        "FOLDER_AND_FILE_LOG =  PROJECT_ROOT / \"logs\" / \"cyclePlanning_logs.txt\""
+        "### function writeToLogs"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 29,
+      "execution_count": 54,
       "id": "5795f84f",
       "metadata": {},
       "outputs": [],
@@ -164,13 +72,98 @@
         "        print(f\"file '{file}' not found - I skip logging and go on with my work...\")\n",
         "    except PermissionError:\n",
         "        print(f\"file '{file}' is locked for editing - I skip logging and go on with my work...\")\n",
-        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "4b3242dc",
+      "metadata": {},
+      "source": [
+        "### Read parameters"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 55,
+      "id": "dfb96c0d",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# determine folder structure for inputs and outputs\n",
+        "PROJECT_ROOT = Path.cwd() # main folder of the code\n",
+        "FOLDER_INPUT =  PROJECT_ROOT / \"input\" # data input\n",
+        "FOLDER_LOGS = PROJECT_ROOT / \"logs\" # folder for log files, eg exorts of data sets for more transparency\n",
+        "FOLDER_OUTPUT = PROJECT_ROOT / \"output/\"\n",
+        "FOLDER_AND_FILE_LOG =  PROJECT_ROOT / \"logs\" / \"cyclePlanning_logs.txt\"\n",
         "writeToLogs(\"STARTED the cycle planning process\", FOLDER_AND_FILE_LOG, True)"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 30,
+      "execution_count": 56,
+      "id": "6abbf87c",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "def readParameters(filename, mySep=\";\") -> dict:\n",
+        "    writeToLogs(f\"reading parameters from file {filename}\", FOLDER_AND_FILE_LOG)\n",
+        "    df = pd.read_csv(filename, sep=mySep, dtype=str)\n",
+        "    params = dict(zip(df[\"parameter\"], df[\"value\"]))\n",
+        "    writeToLogs(\"parameters loaded\", FOLDER_AND_FILE_LOG)\n",
+        "    return params\n",
+        "\n",
+        "# load parameters from CSV into dict\n",
+        "params = readParameters(FOLDER_INPUT / \"parameters.csv\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6b5516d2",
+      "metadata": {
+        "id": "6b5516d2"
+      },
+      "source": [
+        "### inputs and parameters"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 74,
+      "id": "4c4af866",
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# global static variables\n",
+        "\n",
+        "# more relevant for more complex models going forward\n",
+        "MAX_CYCLE_WEEKS = int(params[\"max_cycle_length\"])   # max number of cycle weeks\n",
+        "MIN_REST        = int(params[\"min_rest\"])            # min rest time between shifts in minutes\n",
+        "MAX_CONSEC_DAYS = int(params[\"max_conseq_working_days\"])  # max consecutive working days\n",
+        "\n",
+        "#MAX_CYCLE_WEEKS = 365  # in future this shall be user's input => too long snakes do not help to ensure \"fair\" distribution of shifts\n",
+        "MAX_NB_CYLCEs = 99 # number of cycles\n",
+        "\n",
+        "DICT_WEEKDAYS = {'Mon':1,'Tue':2,'Wed':3,'Thu':4,'Fri':5,'Sat':6,'Sun':7,\n",
+        "                 'Monday':1,'Tuesday':2,'Wednesday':3,'Thursday':4,'Friday':5,'Saturday':6,'Sunday':7,\n",
+        "                 'Mo':1,'Tu':2,'We':3,'Th':4,'Fr':5,'Sa':6,'Su':7,\n",
+        "                 '1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7\n",
+        "                 }\n",
+        "DICT_WEEKDAYS_RETURN = {1: \"Mon\", 2: \"Tue\", 3: \"Wed\", 4: \"Thu\", 5: \"Fri\", 6: \"Sat\", 7: \"Sun\"}\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "75667ded",
+      "metadata": {},
+      "source": [
+        "### function writeDataToLogs"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 58,
       "id": "fe5fda22",
       "metadata": {},
       "outputs": [],
@@ -184,8 +177,16 @@
       ]
     },
     {
+      "cell_type": "markdown",
+      "id": "156d956d",
+      "metadata": {},
+      "source": [
+        "### function readShiftSet"
+      ]
+    },
+    {
       "cell_type": "code",
-      "execution_count": 31,
+      "execution_count": 59,
       "id": "25e5b46e",
       "metadata": {
         "colab": {
@@ -211,13 +212,29 @@
         "    #input_data = input_data.assign(shift_required_staff=input_data[\"shift_required_staff\"].apply(lambda n: list(range(1, n+1)))).explode(\"shift_required_staff\")\n",
         "\n",
         "    writeToLogs(\"import successfull\",FOLDER_AND_FILE_LOG)\n",
+        "\n",
+        "    #multiply rows by requirement\n",
+        "    input_data = input_data[input_data[\"shift_required_staff\"].notna() \n",
+        "                            & (input_data[\"shift_required_staff\"] != 0)].loc[lambda x: x.index.repeat(x[\"shift_required_staff\"])].assign(shift_ID=lambda x: x.groupby(level=0).cumcount().add(1)\n",
+        "                                   .astype(str)\n",
+        "                                   .radd(\"_\")\n",
+        "                                   .radd(x[\"shift_ID\"]))    \n",
+        "    \n",
         "    return input_data\n",
         "    # potentially add further data cleaning steps\n"
       ]
     },
     {
+      "cell_type": "markdown",
+      "id": "1e5560c6",
+      "metadata": {},
+      "source": [
+        "### function build_shift_objects"
+      ]
+    },
+    {
       "cell_type": "code",
-      "execution_count": 32,
+      "execution_count": 60,
       "id": "100d0d26",
       "metadata": {},
       "outputs": [],
@@ -240,13 +257,14 @@
         "            required_qualification=row['[shift_required_qualification]']\n",
         "        )\n",
         "        shift_objects.append(s)\n",
+        "\n",
         "    writeToLogs(\"list of shift_objects built\",FOLDER_AND_FILE_LOG)\n",
         "    return shift_objects\n"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 33,
+      "execution_count": 61,
       "id": "8245bef2",
       "metadata": {
         "id": "8245bef2"
@@ -277,7 +295,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 46,
+      "execution_count": 62,
       "id": "5b6c8480",
       "metadata": {},
       "outputs": [
@@ -285,7 +303,8 @@
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "<class 'list'>\n"
+            "<class 'list'>\n",
+            "['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5', '[freeDay]', '[spareShift]']\n"
           ]
         }
       ],
@@ -293,10 +312,12 @@
         "\n",
         "# read input data for shift definitions\n",
         "data_shiftSet = readShiftSet(FOLDER_INPUT / \"input_ShiftDataSet_Pesch.csv\")\n",
+        "#data_shiftSet = readShiftSet(FOLDER_INPUT / \"input_ShiftDataSet.csv\")\n",
         "\n",
         "shift_objects = build_shift_objects(data_shiftSet)\n",
         "print(type(shift_objects))\n",
         "#shift_objects = shift_objects.loc[shift_objects.index.repeat(shift_objects[\"required_staff\"])] # multiply by required staff\n",
+        "\n",
         "\n",
         "WorkShifts = [s.shift_id for s in shift_objects] #object oriented solution\n",
         "writeToLogs(f\"WorkShifts are defined as {WorkShifts}\", FOLDER_AND_FILE_LOG)\n",
@@ -333,7 +354,7 @@
         "Shifts = [s.shift_id for s in shift_objects]\n",
         "writeToLogs(f\"    Shifts are defined as {Shifts}\", FOLDER_AND_FILE_LOG)\n",
         "\n",
-        "\n"
+        "print(Shifts)\n"
       ]
     },
     {
@@ -348,7 +369,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 35,
+      "execution_count": 63,
       "id": "2f8ffa40",
       "metadata": {
         "id": "2f8ffa40"
@@ -357,14 +378,14 @@
       "source": [
         "# modelling\n",
         "\n",
-        "m = gp.Model(\"SnakeBuilding_simple\")\n",
+        "modelCycle = gp.Model(\"SnakeBuilding_simple\")\n",
         "\n",
         "# variables:\n",
         "# x[s, d, sh] = 1, when snake s is working in shift sh on day d\n",
-        "x = m.addVars(MAX_CYCLE_WEEKS, Weekdays, Shifts, vtype=GRB.BINARY, name=\"x\")\n",
+        "x = modelCycle.addVars(MAX_CYCLE_WEEKS, Weekdays, Shifts, vtype=GRB.BINARY, name=\"x\")\n",
         "\n",
         "# active[s] = 1, when snake s is used\n",
-        "active = m.addVars(MAX_CYCLE_WEEKS, vtype=GRB.BINARY, name=\"active\") # all other snakes are used as placeholders but not necessarily get activated\n"
+        "active = modelCycle.addVars(MAX_CYCLE_WEEKS, vtype=GRB.BINARY, name=\"active\") # all other snakes are used as placeholders but not necessarily get activated\n"
       ]
     },
     {
@@ -401,7 +422,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 36,
+      "execution_count": 64,
       "id": "ca4f7e68",
       "metadata": {
         "id": "ca4f7e68"
@@ -413,7 +434,7 @@
         "# 1. each shift has to be covered on each day\n",
         "for d in Weekdays:\n",
         "    for ws in WorkShifts:\n",
-        "        m.addConstr(gp.quicksum(x[s, d, ws] for s in range(MAX_CYCLE_WEEKS)) >= 1,\n",
+        "        modelCycle.addConstr(gp.quicksum(x[s, d, ws] for s in range(MAX_CYCLE_WEEKS)) >= 1,\n",
         "                    name=f\"Cover_day{d}_{ws}\")\n"
       ]
     },
@@ -439,7 +460,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 37,
+      "execution_count": 65,
       "id": "82f75dda",
       "metadata": {
         "id": "82f75dda"
@@ -449,7 +470,7 @@
         "# 2. each snake can have at most one shift per day\n",
         "for s in range(MAX_CYCLE_WEEKS):\n",
         "    for d in Weekdays:\n",
-        "        m.addConstr(gp.quicksum(x[s, d, sh] for sh in Shifts) == active[s],\n",
+        "        modelCycle.addConstr(gp.quicksum(x[s, d, sh] for sh in Shifts) == active[s],\n",
         "                    name=f\"OneShiftPerDay_s{s}_d{d}\")\n"
       ]
     },
@@ -465,7 +486,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 38,
+      "execution_count": 66,
       "id": "dbc2830d",
       "metadata": {
         "id": "dbc2830d"
@@ -475,11 +496,11 @@
         "\n",
         "# 3) at max 5 consecutive working days (ensure time for resting)\n",
         "for s in range(MAX_CYCLE_WEEKS):\n",
-        "    for start in range(1, 7-5+1):\n",
-        "        m.addConstr(\n",
-        "            gp.quicksum(x[s, d, sh] for d in range(start, start + 6)\n",
-        "                        for sh in WorkShifts) <= 5,\n",
-        "            name=f\"Max5Work_s{s}_start{start}\"\n",
+        "    for start in range(1, 8-MAX_CONSEC_DAYS+1):\n",
+        "        modelCycle.addConstr(\n",
+        "            gp.quicksum(x[s, d, sh] for d in range(start, start + MAX_CONSEC_DAYS)\n",
+        "                        for sh in WorkShifts) <= MAX_CONSEC_DAYS,\n",
+        "            name=f\"Max{MAX_CONSEC_DAYS}Work_s{s}_start{start}\"\n",
         "        )\n",
         "\n"
       ]
@@ -498,7 +519,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 39,
+      "execution_count": 67,
       "id": "430d8e79",
       "metadata": {},
       "outputs": [],
@@ -506,7 +527,7 @@
         "# 4) ensure that cycle weeks are activated in ascending order (not like 2-5-9-17-29-.... but 1-2-3-4-....)\n",
         "\n",
         "for s in range(MAX_CYCLE_WEEKS-1):\n",
-        "    m.addConstr(active[s]>=active[s+1])"
+        "    modelCycle.addConstr(active[s]>=active[s+1])"
       ]
     },
     {
@@ -521,7 +542,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 40,
+      "execution_count": 68,
       "id": "eecac7d1",
       "metadata": {
         "colab": {
@@ -541,51 +562,61 @@
             "Thread count: 8 physical cores, 16 logical processors, using up to 16 threads\n",
             "\n",
             "Academic license 2806446 - for non-commercial use only - registered to di___@student.uni-siegen.de\n",
-            "Optimize a model with 3677 rows, 15695 columns and 46353 nonzeros (Min)\n",
-            "Model fingerprint: 0xfda16aef\n",
+            "Optimize a model with 4168 rows, 61685 columns and 241263 nonzeros (Min)\n",
+            "Model fingerprint: 0x70e0c884\n",
             "Model has 365 linear objective coefficients\n",
-            "Variable types: 0 continuous, 15695 integer (15695 binary)\n",
+            "Variable types: 0 continuous, 61685 integer (61685 binary)\n",
             "Coefficient statistics:\n",
             "  Matrix range     [1e+00, 1e+00]\n",
             "  Objective range  [1e+00, 1e+00]\n",
             "  Bounds range     [1e+00, 1e+00]\n",
             "  RHS range        [1e+00, 5e+00]\n",
+            "\n"
+          ]
+        },
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Presolve removed 1095 rows and 5110 columns\n",
+            "Presolve time: 0.47s\n",
+            "Presolved: 3073 rows, 56575 columns, 115703 nonzeros\n",
+            "Variable types: 0 continuous, 56575 integer (56575 binary)\n",
+            "Found heuristic solution: objective 364.0000000\n",
+            "Found heuristic solution: objective 22.0000000\n",
+            "Deterministic concurrent LP optimizer: primal and dual simplex\n",
+            "Showing primal log only...\n",
             "\n",
-            "Presolve removed 734 rows and 6570 columns\n",
-            "Presolve time: 0.10s\n",
-            "Presolved: 2943 rows, 9125 columns, 29198 nonzeros\n",
-            "Variable types: 0 continuous, 9125 integer (9125 binary)\n",
+            "Concurrent spin time: 0.00s\n",
             "\n",
-            "Root relaxation: objective 4.000000e+00, 6133 iterations, 0.24 seconds (0.55 work units)\n",
+            "Solved with dual simplex\n",
+            "\n",
+            "Root relaxation: cutoff, 155 iterations, 0.06 seconds (0.06 work units)\n",
             "\n",
             "    Nodes    |    Current Node    |     Objective Bounds      |     Work\n",
             " Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time\n",
             "\n",
-            "     0     0    4.00000    0 1021          -    4.00000      -     -    0s\n",
-            "     0     0    4.66667    0   19          -    4.66667      -     -    0s\n",
-            "H    0     0                     365.0000000    4.66667  98.7%     -    0s\n",
-            "H    0     0                       5.0000000    4.66667  6.67%     -    0s\n",
-            "     0     0    4.66667    0   19    5.00000    4.66667  6.67%     -    0s\n",
+            "     0     0     cutoff    0        22.00000   22.00000  0.00%     -    0s\n",
             "\n",
-            "Explored 1 nodes (11877 simplex iterations) in 0.98 seconds (1.61 work units)\n",
+            "Explored 1 nodes (155 simplex iterations) in 0.64 seconds (0.83 work units)\n",
             "Thread count was 16 (of 16 available processors)\n",
             "\n",
-            "Solution count 2: 5 365 \n",
+            "Solution count 2: 22 364 \n",
             "\n",
             "Optimal solution found (tolerance 1.00e-04)\n",
-            "Best objective 5.000000000000e+00, best bound 5.000000000000e+00, gap 0.0000%\n"
+            "Best objective 2.200000000000e+01, best bound 2.200000000000e+01, gap 0.0000%\n"
           ]
         }
       ],
       "source": [
         "# set objective function: minimize number of active snakes\n",
-        "m.setObjective(gp.quicksum(active[s] for s in range(MAX_CYCLE_WEEKS)), GRB.MINIMIZE)\n",
+        "modelCycle.setObjective(gp.quicksum(active[s] for s in range(MAX_CYCLE_WEEKS)), GRB.MINIMIZE)\n",
         "\n",
         "# improvements outstanding:\n",
         "    # add various weighted objectives => based on user input\n",
         "\n",
         "#run optimizer\n",
-        "m.optimize()\n",
+        "modelCycle.optimize()\n",
         "\n"
       ]
     },
@@ -601,7 +632,7 @@
     },
     {
       "cell_type": "code",
-      "execution_count": 41,
+      "execution_count": 75,
       "id": "36e993fe",
       "metadata": {
         "colab": {
@@ -616,52 +647,205 @@
           "output_type": "stream",
           "text": [
             "\n",
-            "minimum number of cycle weeks: 5\n",
+            "minimum number of cycle weeks: 22\n",
             "\n",
             "cycle week 1:\n",
-            "\tday 1: [night000week]\n",
-            "\tday 2: [nightweekend]\n",
-            "\tday 3: [night000week]\n",
-            "\tday 4: [00dayweekend]\n",
-            "\tday 5: [spareShift]\n",
-            "\tday 6: [00dayweekend]\n",
-            "\tday 7: [night000week]\n",
+            "\tMon: [00day000week]_1\n",
+            "\tTue: [00day000week]_1\n",
+            "\tWed: [00day000week]_1\n",
+            "\tThu: [00day000week]_1\n",
+            "\tFri: [00day000week]_1\n",
+            "\tSat: [00day000week]_1\n",
+            "\tSun: [00day000week]_1\n",
             "\n",
             "cycle week 2:\n",
-            "\tday 1: [00day000week]\n",
-            "\tday 2: [00day000week]\n",
-            "\tday 3: [spareShift]\n",
-            "\tday 4: [nightweekend]\n",
-            "\tday 5: [night000week]\n",
-            "\tday 6: [nightweekend]\n",
-            "\tday 7: [00day000week]\n",
+            "\tMon: [00day000week]_2\n",
+            "\tTue: [00day000week]_2\n",
+            "\tWed: [00day000week]_2\n",
+            "\tThu: [00day000week]_2\n",
+            "\tFri: [00day000week]_2\n",
+            "\tSat: [00day000week]_2\n",
+            "\tSun: [00day000week]_2\n",
             "\n",
             "cycle week 3:\n",
-            "\tday 1: [spareShift]\n",
-            "\tday 2: [00dayweekend]\n",
-            "\tday 3: [nightweekend]\n",
-            "\tday 4: [00day000week]\n",
-            "\tday 5: [00dayweekend]\n",
-            "\tday 6: [night000week]\n",
-            "\tday 7: [spareShift]\n",
+            "\tMon: [00day000week]_3\n",
+            "\tTue: [00day000week]_3\n",
+            "\tWed: [00day000week]_3\n",
+            "\tThu: [00day000week]_3\n",
+            "\tFri: [00day000week]_3\n",
+            "\tSat: [00day000week]_3\n",
+            "\tSun: [00day000week]_3\n",
             "\n",
             "cycle week 4:\n",
-            "\tday 1: [00dayweekend]\n",
-            "\tday 2: [night000week]\n",
-            "\tday 3: [00dayweekend]\n",
-            "\tday 4: [night000week]\n",
-            "\tday 5: [nightweekend]\n",
-            "\tday 6: [spareShift]\n",
-            "\tday 7: [nightweekend]\n",
+            "\tMon: [00day000week]_4\n",
+            "\tTue: [00day000week]_4\n",
+            "\tWed: [00day000week]_4\n",
+            "\tThu: [00day000week]_4\n",
+            "\tFri: [00day000week]_4\n",
+            "\tSat: [00day000week]_4\n",
+            "\tSun: [00day000week]_4\n",
             "\n",
             "cycle week 5:\n",
-            "\tday 1: [nightweekend]\n",
-            "\tday 2: [spareShift]\n",
-            "\tday 3: [00day000week]\n",
-            "\tday 4: [spareShift]\n",
-            "\tday 5: [00day000week]\n",
-            "\tday 6: [00day000week]\n",
-            "\tday 7: [00dayweekend]\n"
+            "\tMon: [00day000week]_5\n",
+            "\tTue: [00day000week]_5\n",
+            "\tWed: [00day000week]_5\n",
+            "\tThu: [00day000week]_5\n",
+            "\tFri: [00day000week]_5\n",
+            "\tSat: [00day000week]_5\n",
+            "\tSun: [00day000week]_5\n",
+            "\n",
+            "cycle week 6:\n",
+            "\tMon: [00day000week]_6\n",
+            "\tTue: [00day000week]_6\n",
+            "\tWed: [00day000week]_6\n",
+            "\tThu: [00day000week]_6\n",
+            "\tFri: [00day000week]_6\n",
+            "\tSat: [00day000week]_6\n",
+            "\tSun: [00day000week]_6\n",
+            "\n",
+            "cycle week 7:\n",
+            "\tMon: [00day000week]_7\n",
+            "\tTue: [00day000week]_7\n",
+            "\tWed: [00day000week]_7\n",
+            "\tThu: [00day000week]_7\n",
+            "\tFri: [00day000week]_7\n",
+            "\tSat: [00day000week]_7\n",
+            "\tSun: [00day000week]_7\n",
+            "\n",
+            "cycle week 8:\n",
+            "\tMon: [night000week]_1\n",
+            "\tTue: [night000week]_1\n",
+            "\tWed: [night000week]_1\n",
+            "\tThu: [night000week]_1\n",
+            "\tFri: [night000week]_1\n",
+            "\tSat: [night000week]_1\n",
+            "\tSun: [night000week]_1\n",
+            "\n",
+            "cycle week 9:\n",
+            "\tMon: [night000week]_2\n",
+            "\tTue: [night000week]_2\n",
+            "\tWed: [night000week]_2\n",
+            "\tThu: [night000week]_2\n",
+            "\tFri: [night000week]_2\n",
+            "\tSat: [night000week]_2\n",
+            "\tSun: [night000week]_2\n",
+            "\n",
+            "cycle week 10:\n",
+            "\tMon: [night000week]_3\n",
+            "\tTue: [night000week]_3\n",
+            "\tWed: [night000week]_3\n",
+            "\tThu: [night000week]_3\n",
+            "\tFri: [night000week]_3\n",
+            "\tSat: [night000week]_3\n",
+            "\tSun: [night000week]_3\n",
+            "\n",
+            "cycle week 11:\n",
+            "\tMon: [night000week]_4\n",
+            "\tTue: [night000week]_4\n",
+            "\tWed: [night000week]_4\n",
+            "\tThu: [night000week]_4\n",
+            "\tFri: [night000week]_4\n",
+            "\tSat: [night000week]_4\n",
+            "\tSun: [night000week]_4\n",
+            "\n",
+            "cycle week 12:\n",
+            "\tMon: [night000week]_5\n",
+            "\tTue: [night000week]_5\n",
+            "\tWed: [night000week]_5\n",
+            "\tThu: [night000week]_5\n",
+            "\tFri: [night000week]_5\n",
+            "\tSat: [night000week]_5\n",
+            "\tSun: [night000week]_5\n",
+            "\n",
+            "cycle week 13:\n",
+            "\tMon: [00dayweekend]_1\n",
+            "\tTue: [00dayweekend]_1\n",
+            "\tWed: [00dayweekend]_1\n",
+            "\tThu: [00dayweekend]_1\n",
+            "\tFri: [00dayweekend]_1\n",
+            "\tSat: [00dayweekend]_1\n",
+            "\tSun: [00dayweekend]_1\n",
+            "\n",
+            "cycle week 14:\n",
+            "\tMon: [00dayweekend]_2\n",
+            "\tTue: [00dayweekend]_2\n",
+            "\tWed: [00dayweekend]_2\n",
+            "\tThu: [00dayweekend]_2\n",
+            "\tFri: [00dayweekend]_2\n",
+            "\tSat: [00dayweekend]_2\n",
+            "\tSun: [00dayweekend]_2\n",
+            "\n",
+            "cycle week 15:\n",
+            "\tMon: [00dayweekend]_3\n",
+            "\tTue: [00dayweekend]_3\n",
+            "\tWed: [00dayweekend]_3\n",
+            "\tThu: [00dayweekend]_3\n",
+            "\tFri: [00dayweekend]_3\n",
+            "\tSat: [00dayweekend]_3\n",
+            "\tSun: [00dayweekend]_3\n",
+            "\n",
+            "cycle week 16:\n",
+            "\tMon: [00dayweekend]_4\n",
+            "\tTue: [00dayweekend]_4\n",
+            "\tWed: [00dayweekend]_4\n",
+            "\tThu: [00dayweekend]_4\n",
+            "\tFri: [00dayweekend]_4\n",
+            "\tSat: [00dayweekend]_4\n",
+            "\tSun: [00dayweekend]_4\n",
+            "\n",
+            "cycle week 17:\n",
+            "\tMon: [00dayweekend]_5\n",
+            "\tTue: [00dayweekend]_5\n",
+            "\tWed: [00dayweekend]_5\n",
+            "\tThu: [00dayweekend]_5\n",
+            "\tFri: [00dayweekend]_5\n",
+            "\tSat: [00dayweekend]_5\n",
+            "\tSun: [00dayweekend]_5\n",
+            "\n",
+            "cycle week 18:\n",
+            "\tMon: [nightweekend]_1\n",
+            "\tTue: [nightweekend]_1\n",
+            "\tWed: [nightweekend]_1\n",
+            "\tThu: [nightweekend]_1\n",
+            "\tFri: [nightweekend]_1\n",
+            "\tSat: [nightweekend]_1\n",
+            "\tSun: [nightweekend]_1\n",
+            "\n",
+            "cycle week 19:\n",
+            "\tMon: [nightweekend]_2\n",
+            "\tTue: [nightweekend]_2\n",
+            "\tWed: [nightweekend]_2\n",
+            "\tThu: [nightweekend]_2\n",
+            "\tFri: [nightweekend]_2\n",
+            "\tSat: [nightweekend]_2\n",
+            "\tSun: [nightweekend]_2\n",
+            "\n",
+            "cycle week 20:\n",
+            "\tMon: [nightweekend]_3\n",
+            "\tTue: [nightweekend]_3\n",
+            "\tWed: [nightweekend]_3\n",
+            "\tThu: [nightweekend]_3\n",
+            "\tFri: [nightweekend]_3\n",
+            "\tSat: [nightweekend]_3\n",
+            "\tSun: [nightweekend]_3\n",
+            "\n",
+            "cycle week 21:\n",
+            "\tMon: [nightweekend]_4\n",
+            "\tTue: [nightweekend]_4\n",
+            "\tWed: [nightweekend]_4\n",
+            "\tThu: [nightweekend]_4\n",
+            "\tFri: [nightweekend]_4\n",
+            "\tSat: [nightweekend]_4\n",
+            "\tSun: [nightweekend]_4\n",
+            "\n",
+            "cycle week 22:\n",
+            "\tMon: [nightweekend]_5\n",
+            "\tTue: [nightweekend]_5\n",
+            "\tWed: [nightweekend]_5\n",
+            "\tThu: [nightweekend]_5\n",
+            "\tFri: [nightweekend]_5\n",
+            "\tSat: [nightweekend]_5\n",
+            "\tSun: [nightweekend]_5\n"
           ]
         }
       ],
@@ -671,9 +855,9 @@
         "        # write results in file\n",
         "        # create a shift overview per staff member\n",
         "\n",
-        "if m.status == GRB.OPTIMAL:\n",
-        "    print(\"\\nminimum number of cycle weeks:\", int(m.objVal))\n",
-        "    writeToLogs(f\"successfully finished cycle plan: found an optimal solution using {int(m.objVal)} cycle weeks\",FOLDER_AND_FILE_LOG)\n",
+        "if modelCycle.status == GRB.OPTIMAL:\n",
+        "    print(\"\\nminimum number of cycle weeks:\", int(modelCycle.objVal))\n",
+        "    writeToLogs(f\"successfully finished cycle plan: found an optimal solution using {int(modelCycle.objVal)} cycle weeks\",FOLDER_AND_FILE_LOG)\n",
         "    for s in range(MAX_CYCLE_WEEKS):\n",
         "        if active[s].X == 1:\n",
         "            print(f\"\\ncycle week {s+1}:\")\n",
@@ -681,13 +865,28 @@
         "            for d in Weekdays:\n",
         "                for sh in Shifts:\n",
         "                    if x[s, d, sh].X == 1:\n",
-        "                        print(f\"\\tday {d}: {sh}\")\n",
-        "                        writeToLogs(f\"\\tday {d}: {sh}\",FOLDER_AND_FILE_LOG)\n"
+        "                        print(f\"\\t{DICT_WEEKDAYS_RETURN[d]}: {sh}\")\n",
+        "                        writeToLogs(f\"\\tday {d}: {sh}\",FOLDER_AND_FILE_LOG)\n",
+        "\n",
+        "# output to file\n",
+        "if modelCycle.status == GRB.OPTIMAL:\n",
+        "    output_string = \"\"\n",
+        "    with open(FOLDER_OUTPUT / \"output_cycle.csv\", \"w\") as file:\n",
+        "        file.write(\"FINAL CYCLE:\\nMon;Tue;Wed;Thu;Fri;Sat;Sun;\\n\")\n",
+        "    for s in range(MAX_CYCLE_WEEKS):\n",
+        "        if active[s].X == 1:\n",
+        "            for d in Weekdays:\n",
+        "                for sh in Shifts:\n",
+        "                    if x[s, d, sh].X == 1:\n",
+        "                        output_string = output_string + sh + \";\"\n",
+        "            with open(FOLDER_OUTPUT / \"output_cycle.csv\", \"a\") as file: \n",
+        "                file.write(output_string + \"\\n\")\n",
+        "                output_string = \"\"\n"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 42,
+      "execution_count": 70,
       "id": "FQMHVRPFbKkZ",
       "metadata": {
         "colab": {
@@ -701,7 +900,7 @@
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "Shift(shift_id='[night000week]', description='night shift week', weekdays=['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], start=datetime.time(16, 15), end=datetime.time(7, 0), required_staff=5, shift_class=7, shift_work_time_assignment='nan', is_work_shift=True, required_qualification='none')\n"
+            "Shift(shift_id='[00day000week]_2', description='day shift week', weekdays=['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], start=datetime.time(6, 0), end=datetime.time(16, 45), required_staff=7, shift_class=2, shift_work_time_assignment='nan', is_work_shift=True, required_qualification='none')\n"
           ]
         }
       ],
