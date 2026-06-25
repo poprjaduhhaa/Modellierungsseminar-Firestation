@@ -1,8 +1,25 @@
 ;shift_id;description;weekdays;start;end;required_staff;shift_class;shift_work_time_assignment;is_work_shift;required_qualification
-0;000001EARLY0_1;early day shift;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00:00;14:00:00;3;1;nan;True;none
-1;000001EARLY0_2;early day shift;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00:00;14:00:00;3;1;nan;True;none
-2;000001EARLY0_3;early day shift;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00:00;14:00:00;3;1;nan;True;none
-3;000002LATE00_1;late day and afternoon shift;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];14:00:00;22:00:00;2;2;nan;True;none
-4;000002LATE00_2;late day and afternoon shift;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];14:00:00;22:00:00;2;2;nan;True;none
-5;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;0;1;0;False;
-6;[spareShift];dummy for spare shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
+0;[00day000week]_1;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+1;[00day000week]_2;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+2;[00day000week]_3;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+3;[00day000week]_4;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+4;[00day000week]_5;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+5;[00day000week]_6;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+6;[00day000week]_7;day shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];06:00:00;16:45:00;7;2;nan;True;none
+7;[night000week]_1;night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
+8;[night000week]_2;night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
+9;[night000week]_3;night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
+10;[night000week]_4;night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
+11;[night000week]_5;night shift week;['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];16:15:00;07:00:00;5;7;nan;True;none
+12;[00dayweekend]_1;day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
+13;[00dayweekend]_2;day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
+14;[00dayweekend]_3;day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
+15;[00dayweekend]_4;day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
+16;[00dayweekend]_5;day shift weekend;['Sat', 'Sun'];06:00:00;16:45:00;5;5;nan;True;none
+17;[nightweekend]_1;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
+18;[nightweekend]_2;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
+19;[nightweekend]_3;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
+20;[nightweekend]_4;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
+21;[nightweekend]_5;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
+22;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;0;1;0;False;
+23;[spareShift];dummy for spare shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
