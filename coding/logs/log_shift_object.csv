@@ -22,4 +22,4 @@
 20;[nightweekend]_4;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
 21;[nightweekend]_5;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
 22;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;0;1;0;False;
-23;[spareShift];dummy for spare shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
+23;[reserveShift];dummy for jump shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
