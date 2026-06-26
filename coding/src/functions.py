@@ -33,14 +33,12 @@ def readParameters(filename, mySep=";") -> dict:
         print(f"file {filename} not available")
     
 
-
 # LOG / for transparency write shift objects into a file:
 def writeDataToLogs(data, filename):
     try:
         pd.DataFrame(data).to_csv(filename, sep=";", index=True, encoding="utf-8", decimal=".")
     except PermissionError:
         print("log file for shift_object is open - I skipped saving and executed succeeding code")
-
 
 
 # read input data
