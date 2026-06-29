@@ -21,8 +21,5 @@
 19;[nightweekend]%_%3;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
 20;[nightweekend]%_%4;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
 21;[nightweekend]%_%5;night shift weekend;['Sat', 'Sun'];16:15:00;07:00:00;5;10;nan;True;none
-22;[testOnly]%_%1;test shift;['Mon', 'Wed', 'Fri'];06:00:00;16:00:00;3;2;nan;True;none
-23;[testOnly]%_%2;test shift;['Mon', 'Wed', 'Fri'];06:00:00;16:00:00;3;2;nan;True;none
-24;[testOnly]%_%3;test shift;['Mon', 'Wed', 'Fri'];06:00:00;16:00:00;3;2;nan;True;none
-25;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;0;1;0;False;
-26;[reserveShift];dummy for jump shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
+22;[freeDay];dummy shift for free days;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;0;1;0;False;
+23;[reserveShift];dummy for jump shifts;['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];06:00;06:00;1;5;0;True;
