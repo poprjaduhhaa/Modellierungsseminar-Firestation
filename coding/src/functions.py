@@ -77,7 +77,8 @@ def readShiftSet(filename, mySep: str=";") -> pd.DataFrame:
     input_data = input_data[input_data["shift_required_staff"].notna() 
                             & (input_data["shift_required_staff"] != 0)].loc[lambda x: x.index.repeat(x["shift_required_staff"])].assign(shift_ID=lambda x: x.groupby(level=0).cumcount().add(1)
                                    .astype(str)
-                                   .radd("_")
+                                   .radd("%_%") # use a clear - unlikely used otherwise - delimiter for later removal (relevant for output)
                                    .radd(x["shift_ID"]))    
     return input_data
     # potentially add further data cleaning steps
+

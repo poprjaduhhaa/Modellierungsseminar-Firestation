@@ -1,160 +1,191 @@
-2026-06-29 12:18:11 // cycle planning process started
-2026-06-29 12:18:11 // parameters loaded
-2026-06-29 12:18:11 // WorkShifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5']
-2026-06-29 12:18:11 //     Shifts are defined as ['[00day000week]_1', '[00day000week]_2', '[00day000week]_3', '[00day000week]_4', '[00day000week]_5', '[00day000week]_6', '[00day000week]_7', '[night000week]_1', '[night000week]_2', '[night000week]_3', '[night000week]_4', '[night000week]_5', '[00dayweekend]_1', '[00dayweekend]_2', '[00dayweekend]_3', '[00dayweekend]_4', '[00dayweekend]_5', '[nightweekend]_1', '[nightweekend]_2', '[nightweekend]_3', '[nightweekend]_4', '[nightweekend]_5', '[freeDay]', '[reserveShift]']
-2026-06-29 12:18:34 // successfully finished cycle plan: found an optimal solution using 17 cycle weeks
-2026-06-29 12:18:34 // 
+2026-06-29 13:23:43 // cycle planning process started
+2026-06-29 13:23:43 // parameters loaded
+2026-06-29 13:23:43 // WorkShifts are defined as ['[00day000week]%_%1', '[00day000week]%_%2', '[00day000week]%_%3', '[00day000week]%_%4', '[00day000week]%_%5', '[00day000week]%_%6', '[00day000week]%_%7', '[night000week]%_%1', '[night000week]%_%2', '[night000week]%_%3', '[night000week]%_%4', '[night000week]%_%5', '[00dayweekend]%_%1', '[00dayweekend]%_%2', '[00dayweekend]%_%3', '[00dayweekend]%_%4', '[00dayweekend]%_%5', '[nightweekend]%_%1', '[nightweekend]%_%2', '[nightweekend]%_%3', '[nightweekend]%_%4', '[nightweekend]%_%5', '[testOnly]%_%1', '[testOnly]%_%2', '[testOnly]%_%3']
+2026-06-29 13:23:43 //     Shifts are defined as ['[00day000week]%_%1', '[00day000week]%_%2', '[00day000week]%_%3', '[00day000week]%_%4', '[00day000week]%_%5', '[00day000week]%_%6', '[00day000week]%_%7', '[night000week]%_%1', '[night000week]%_%2', '[night000week]%_%3', '[night000week]%_%4', '[night000week]%_%5', '[00dayweekend]%_%1', '[00dayweekend]%_%2', '[00dayweekend]%_%3', '[00dayweekend]%_%4', '[00dayweekend]%_%5', '[nightweekend]%_%1', '[nightweekend]%_%2', '[nightweekend]%_%3', '[nightweekend]%_%4', '[nightweekend]%_%5', '[testOnly]%_%1', '[testOnly]%_%2', '[testOnly]%_%3', '[freeDay]', '[reserveShift]']
+2026-06-29 13:24:10 // successfully finished cycle plan: found an optimal solution using 20 cycle weeks
+2026-06-29 13:24:10 // 
 cycle 1:
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 
 cycle week 1:
-2026-06-29 12:18:34 // 	day 1: [reserveShift]
-2026-06-29 12:18:34 // 	day 2: [night000week]_5
-2026-06-29 12:18:34 // 	day 3: [freeDay]
-2026-06-29 12:18:34 // 	day 4: [00day000week]_6
-2026-06-29 12:18:34 // 	day 5: [night000week]_3
-2026-06-29 12:18:34 // 	day 6: [freeDay]
-2026-06-29 12:18:34 // 	day 7: [nightweekend]_3
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [testOnly]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [testOnly]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [00dayweekend]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
 cycle week 2:
-2026-06-29 12:18:34 // 	day 1: [night000week]_1
-2026-06-29 12:18:34 // 	day 2: [reserveShift]
-2026-06-29 12:18:34 // 	day 3: [night000week]_1
-2026-06-29 12:18:34 // 	day 4: [reserveShift]
-2026-06-29 12:18:34 // 	day 5: [night000week]_5
-2026-06-29 12:18:34 // 	day 6: [reserveShift]
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_5
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [testOnly]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [freeDay]
+2026-06-29 13:24:10 // 
 cycle week 3:
-2026-06-29 12:18:34 // 	day 1: [night000week]_4
-2026-06-29 12:18:34 // 	day 2: [reserveShift]
-2026-06-29 12:18:34 // 	day 3: [00day000week]_1
-2026-06-29 12:18:34 // 	day 4: [night000week]_2
-2026-06-29 12:18:34 // 	day 5: [freeDay]
-2026-06-29 12:18:34 // 	day 6: [nightweekend]_5
-2026-06-29 12:18:34 // 	day 7: [freeDay]
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [reserveShift]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [night000week]
+2026-06-29 13:24:10 // 	day 5: [reserveShift]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [reserveShift]
+2026-06-29 13:24:10 // 
 cycle week 4:
-2026-06-29 12:18:34 // 	day 1: [freeDay]
-2026-06-29 12:18:34 // 	day 2: [night000week]_2
-2026-06-29 12:18:34 // 	day 3: [freeDay]
-2026-06-29 12:18:34 // 	day 4: [00day000week]_5
-2026-06-29 12:18:34 // 	day 5: [night000week]_2
-2026-06-29 12:18:34 // 	day 6: [freeDay]
-2026-06-29 12:18:34 // 	day 7: [nightweekend]_1
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [night000week]
+2026-06-29 13:24:10 // 	day 2: [freeDay]
+2026-06-29 13:24:10 // 	day 3: [night000week]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [night000week]
+2026-06-29 13:24:10 // 	day 6: [freeDay]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
 cycle week 5:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_4
-2026-06-29 12:18:34 // 	day 2: [night000week]_3
-2026-06-29 12:18:34 // 	day 3: [reserveShift]
-2026-06-29 12:18:34 // 	day 4: [00day000week]_4
-2026-06-29 12:18:34 // 	day 5: [00day000week]_7
-2026-06-29 12:18:34 // 	day 6: [nightweekend]_1
-2026-06-29 12:18:34 // 	day 7: [freeDay]
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [freeDay]
+2026-06-29 13:24:10 // 	day 2: [night000week]
+2026-06-29 13:24:10 // 	day 3: [freeDay]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [testOnly]
+2026-06-29 13:24:10 // 	day 6: [00dayweekend]
+2026-06-29 13:24:10 // 	day 7: [nightweekend]
+2026-06-29 13:24:10 // 
 cycle week 6:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_7
-2026-06-29 12:18:34 // 	day 2: [night000week]_1
-2026-06-29 12:18:34 // 	day 3: [freeDay]
-2026-06-29 12:18:34 // 	day 4: [night000week]_4
-2026-06-29 12:18:34 // 	day 5: [freeDay]
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_2
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_2
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [night000week]
+2026-06-29 13:24:10 // 	day 2: [reserveShift]
+2026-06-29 13:24:10 // 	day 3: [testOnly]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [00dayweekend]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
 cycle week 7:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_6
-2026-06-29 12:18:34 // 	day 2: [00day000week]_2
-2026-06-29 12:18:34 // 	day 3: [00day000week]_2
-2026-06-29 12:18:34 // 	day 4: [00day000week]_7
-2026-06-29 12:18:34 // 	day 5: [00day000week]_4
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_1
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_1
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [night000week]
+2026-06-29 13:24:10 // 	day 4: [reserveShift]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [freeDay]
+2026-06-29 13:24:10 // 
 cycle week 8:
-2026-06-29 12:18:34 // 	day 1: [freeDay]
-2026-06-29 12:18:34 // 	day 2: [00day000week]_1
-2026-06-29 12:18:34 // 	day 3: [night000week]_3
-2026-06-29 12:18:34 // 	day 4: [freeDay]
-2026-06-29 12:18:34 // 	day 5: [night000week]_1
-2026-06-29 12:18:34 // 	day 6: [freeDay]
-2026-06-29 12:18:34 // 	day 7: [nightweekend]_2
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [night000week]
+2026-06-29 13:24:10 // 	day 2: [reserveShift]
+2026-06-29 13:24:10 // 	day 3: [night000week]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [night000week]
+2026-06-29 13:24:10 // 	day 6: [freeDay]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
 cycle week 9:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_3
-2026-06-29 12:18:34 // 	day 2: [00day000week]_5
-2026-06-29 12:18:34 // 	day 3: [00day000week]_3
-2026-06-29 12:18:34 // 	day 4: [00day000week]_1
-2026-06-29 12:18:34 // 	day 5: [00day000week]_3
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_3
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_3
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [reserveShift]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [night000week]
+2026-06-29 13:24:10 // 	day 6: [freeDay]
+2026-06-29 13:24:10 // 	day 7: [nightweekend]
+2026-06-29 13:24:10 // 
 cycle week 10:
-2026-06-29 12:18:34 // 	day 1: [freeDay]
-2026-06-29 12:18:34 // 	day 2: [00day000week]_7
-2026-06-29 12:18:34 // 	day 3: [night000week]_5
-2026-06-29 12:18:34 // 	day 4: [freeDay]
-2026-06-29 12:18:34 // 	day 5: [night000week]_4
-2026-06-29 12:18:34 // 	day 6: [reserveShift]
-2026-06-29 12:18:34 // 	day 7: [nightweekend]_5
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [night000week]
+2026-06-29 13:24:10 // 	day 3: [reserveShift]
+2026-06-29 13:24:10 // 	day 4: [night000week]
+2026-06-29 13:24:10 // 	day 5: [freeDay]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [reserveShift]
+2026-06-29 13:24:10 // 
 cycle week 11:
-2026-06-29 12:18:34 // 	day 1: [night000week]_5
-2026-06-29 12:18:34 // 	day 2: [reserveShift]
-2026-06-29 12:18:34 // 	day 3: [00day000week]_4
-2026-06-29 12:18:34 // 	day 4: [night000week]_3
-2026-06-29 12:18:34 // 	day 5: [reserveShift]
-2026-06-29 12:18:34 // 	day 6: [nightweekend]_2
-2026-06-29 12:18:34 // 	day 7: [freeDay]
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [night000week]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [freeDay]
+2026-06-29 13:24:10 // 
 cycle week 12:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_2
-2026-06-29 12:18:34 // 	day 2: [night000week]_4
-2026-06-29 12:18:34 // 	day 3: [reserveShift]
-2026-06-29 12:18:34 // 	day 4: [00day000week]_3
-2026-06-29 12:18:34 // 	day 5: [00day000week]_6
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_3
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_3
-2026-06-29 12:18:34 // 
+2026-06-29 13:24:10 // 	day 1: [night000week]
+2026-06-29 13:24:10 // 	day 2: [freeDay]
+2026-06-29 13:24:10 // 	day 3: [night000week]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [night000week]
+2026-06-29 13:24:10 // 	day 6: [reserveShift]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
 cycle week 13:
-2026-06-29 12:18:34 // 	day 1: [freeDay]
-2026-06-29 12:18:34 // 	day 2: [00day000week]_3
-2026-06-29 12:18:34 // 	day 3: [00day000week]_7
-2026-06-29 12:18:34 // 	day 4: [night000week]_5
-2026-06-29 12:18:34 // 	day 5: [freeDay]
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_5
-2026-06-29 12:18:34 // 	day 7: [nightweekend]_4
-2026-06-29 12:18:34 // 
-cycle week 14:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_1
-2026-06-29 12:18:34 // 	day 2: [00day000week]_4
-2026-06-29 12:18:34 // 	day 3: [00day000week]_6
-2026-06-29 12:18:34 // 	day 4: [00day000week]_2
-2026-06-29 12:18:34 // 	day 5: [00day000week]_5
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_3
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_3
-2026-06-29 12:18:34 // 
-cycle week 15:
-2026-06-29 12:18:34 // 	day 1: [00day000week]_5
-2026-06-29 12:18:34 // 	day 2: [00day000week]_6
-2026-06-29 12:18:34 // 	day 3: [night000week]_4
-2026-06-29 12:18:34 // 	day 4: [freeDay]
-2026-06-29 12:18:34 // 	day 5: [00day000week]_2
-2026-06-29 12:18:34 // 	day 6: [00dayweekend]_4
-2026-06-29 12:18:34 // 	day 7: [00dayweekend]_4
-2026-06-29 12:18:34 // 
-cycle week 16:
-2026-06-29 12:18:34 // 	day 1: [night000week]_3
-2026-06-29 12:18:34 // 	day 2: [reserveShift]
-2026-06-29 12:18:34 // 	day 3: [00day000week]_5
-2026-06-29 12:18:34 // 	day 4: [night000week]_1
-2026-06-29 12:18:34 // 	day 5: [freeDay]
-2026-06-29 12:18:34 // 	day 6: [nightweekend]_4
-2026-06-29 12:18:34 // 	day 7: [reserveShift]
-2026-06-29 12:18:34 // 
-cycle week 17:
-2026-06-29 12:18:34 // 	day 1: [night000week]_2
-2026-06-29 12:18:34 // 	day 2: [reserveShift]
-2026-06-29 12:18:34 // 	day 3: [night000week]_2
-2026-06-29 12:18:34 // 	day 4: [freeDay]
-2026-06-29 12:18:34 // 	day 5: [00day000week]_1
-2026-06-29 12:18:34 // 	day 6: [nightweekend]_3
-2026-06-29 12:18:34 // 	day 7: [freeDay]
+2026-06-29 13:24:10 // 	day 1: [freeDay]
+2026-06-29 13:24:10 // 	day 2: [night000week]
+2026-06-29 13:24:10 // 	day 3: [reserveShift]
+2026-06-29 13:24:10 // 	day 4: [night000week]
+2026-06-29 13:24:10 // 	day 5: [freeDay]
+2026-06-29 13:24:10 // 	day 6: [reserveShift]
+2026-06-29 13:24:10 // 	day 7: [nightweekend]
+2026-06-29 13:24:10 // 
+cycle 2:
+2026-06-29 13:24:10 // 
+cycle week 1:
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [night000week]
+2026-06-29 13:24:10 // 	day 3: [reserveShift]
+2026-06-29 13:24:10 // 	day 4: [night000week]
+2026-06-29 13:24:10 // 	day 5: [reserveShift]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [reserveShift]
+2026-06-29 13:24:10 // 
+cycle week 2:
+2026-06-29 13:24:10 // 	day 1: [testOnly]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [freeDay]
+2026-06-29 13:24:10 // 
+cycle week 3:
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [freeDay]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [00day000week]
+2026-06-29 13:24:10 // 	day 5: [testOnly]
+2026-06-29 13:24:10 // 	day 6: [00dayweekend]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
+2026-06-29 13:24:10 // 
+cycle week 4:
+2026-06-29 13:24:10 // 	day 1: [reserveShift]
+2026-06-29 13:24:10 // 	day 2: [00day000week]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [night000week]
+2026-06-29 13:24:10 // 	day 5: [freeDay]
+2026-06-29 13:24:10 // 	day 6: [00dayweekend]
+2026-06-29 13:24:10 // 	day 7: [nightweekend]
+2026-06-29 13:24:10 // 
+cycle week 5:
+2026-06-29 13:24:10 // 	day 1: [freeDay]
+2026-06-29 13:24:10 // 	day 2: [night000week]
+2026-06-29 13:24:10 // 	day 3: [freeDay]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [00day000week]
+2026-06-29 13:24:10 // 	day 6: [reserveShift]
+2026-06-29 13:24:10 // 	day 7: [nightweekend]
+2026-06-29 13:24:10 // 
+cycle week 6:
+2026-06-29 13:24:10 // 	day 1: [night000week]
+2026-06-29 13:24:10 // 	day 2: [freeDay]
+2026-06-29 13:24:10 // 	day 3: [00day000week]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [testOnly]
+2026-06-29 13:24:10 // 	day 6: [nightweekend]
+2026-06-29 13:24:10 // 	day 7: [reserveShift]
+2026-06-29 13:24:10 // 
+cycle 3:
+2026-06-29 13:24:10 // 
+cycle week 1:
+2026-06-29 13:24:10 // 	day 1: [00day000week]
+2026-06-29 13:24:10 // 	day 2: [freeDay]
+2026-06-29 13:24:10 // 	day 3: [testOnly]
+2026-06-29 13:24:10 // 	day 4: [freeDay]
+2026-06-29 13:24:10 // 	day 5: [night000week]
+2026-06-29 13:24:10 // 	day 6: [freeDay]
+2026-06-29 13:24:10 // 	day 7: [00dayweekend]
