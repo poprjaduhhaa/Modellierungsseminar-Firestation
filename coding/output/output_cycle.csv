@@ -1,22 +1,22 @@
 FINAL CYCLE:
 Mon;Tue;Wed;Thu;Fri;Sat;Sun;
 CYCLE: 1:
-[00day000week];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];
-[00day000week];[night000week];[freeDay];[00day000week];[00day000week];[nightweekend];[freeDay];
-[00day000week];[night000week];[reserveShift];[00day000week];[00day000week];[reserveShift];[00dayweekend];
-[reserveShift];[00day000week];[night000week];[freeDay];[00day000week];[00dayweekend];[nightweekend];
 [reserveShift];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
-[night000week];[freeDay];[night000week];[freeDay];[00day000week];[00dayweekend];[00dayweekend];
+[00day000week];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[freeDay_:-)_];[nightweekend];
+[00day000week];[night000week];[freeDay_:-)_];[night000week];[reserveShift];[reserveShift];[00dayweekend];
+[freeDay_:-)_];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
+[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay_:-)_];
 CYCLE: 2:
-[00day000week];[00day000week];[00day000week];[00day000week];[00day000week];[freeDay];[00dayweekend];
-[00day000week];[night000week];[freeDay];[00day000week];[00day000week];[nightweekend];[reserveShift];
-[freeDay];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[nightweekend];
-[night000week];[freeDay];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];
-[night000week];[reserveShift];[00day000week];[night000week];[freeDay];[nightweekend];[reserveShift];
+[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00dayweekend];[00dayweekend];
+[night000week];[freeDay_:-)_];[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00dayweekend];
+[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];[freeDay_:-)_];
+[reserveShift];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[nightweekend];
+[00day000week];[night000week];[reserveShift];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
 CYCLE: 3:
-[freeDay];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[nightweekend];
-[night000week];[reserveShift];[night000week];[freeDay];[night000week];[reserveShift];[reserveShift];
-[00day000week];[night000week];[freeDay];[night000week];[freeDay];[nightweekend];[freeDay];
-[reserveShift];[night000week];[reserveShift];[night000week];[reserveShift];[00dayweekend];[nightweekend];
-[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay];
-[night000week];[freeDay];[night000week];[freeDay];[night000week];[freeDay];[reserveShift];
+[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
+[reserveShift];[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];
+[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
+[night000week];[reserveShift];[00day000week];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+[00day000week];[00day000week];[night000week];[freeDay_:-)_];[night000week];[freeDay_:-)_];[reserveShift];
+[night000week];[freeDay_:-)_];[night000week];[reserveShift];[00day000week];[00dayweekend];[00dayweekend];
