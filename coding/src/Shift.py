@@ -18,6 +18,7 @@ class Shift:
     shift_work_time_assignment: int  # 
     is_work_shift: bool           # boolean to reflect if a shift is treated as work-shift or not (eg "free_day" is False)
     required_qualification: str  # qualification needs for the shift (relevant for mapping suitable staff members)
+
     
 def shift_duration_hours(shift) -> float:
     # calculate gross shift duration in hours (handles overnight shifts)
@@ -28,6 +29,7 @@ def shift_duration_hours(shift) -> float:
     else:
         duration_min = end_min - start_min
     return duration_min / 60
+
 
 # Calculates minutes of rest between end of sh1 and start of sh2 on the next day.
 # Handles overnight shifts (e.g. 16:15->07:00) by adding 24h to end time.
