@@ -1,22 +1,36 @@
 FINAL CYCLE:
 Mon;Tue;Wed;Thu;Fri;Sat;Sun;
 CYCLE: 1:
-[reserveShift];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
-[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[freeDay_:-)_];[nightweekend];
-[00day000week];[night000week];[freeDay_:-)_];[night000week];[reserveShift];[reserveShift];[00dayweekend];
-[freeDay_:-)_];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay_:-)_];
+1;[night000week];[freeDay_:-)_];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
 CYCLE: 2:
-[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00dayweekend];[00dayweekend];
-[night000week];[freeDay_:-)_];[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00dayweekend];
-[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];[freeDay_:-)_];
-[reserveShift];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[nightweekend];
-[00day000week];[night000week];[reserveShift];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+2;[00day000week];[night000week];[reserveShift];[night000week];[reserveShift];[nightweekend];[reserveShift];
 CYCLE: 3:
-[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
-[reserveShift];[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
-[night000week];[reserveShift];[00day000week];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
-[00day000week];[00day000week];[night000week];[freeDay_:-)_];[night000week];[freeDay_:-)_];[reserveShift];
-[night000week];[freeDay_:-)_];[night000week];[reserveShift];[00day000week];[00dayweekend];[00dayweekend];
+3;[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00dayweekend];[00dayweekend];
+CYCLE: 4:
+4;[night000week];[freeDay_:-)_];[00day000week];[00day000week];[00day000week];[nightweekend];[reserveShift];
+CYCLE: 5:
+5;[reserveShift];[00day000week];[night000week];[reserveShift];[00day000week];[00dayweekend];[nightweekend];
+CYCLE: 6:
+6;[night000week];[freeDay_:-)_];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];
+CYCLE: 7:
+7;[reserveShift];[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[nightweekend];
+CYCLE: 8:
+8;[00day000week];[night000week];[freeDay_:-)_];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
+CYCLE: 9:
+9;[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[00dayweekend];[reserveShift];
+CYCLE: 10:
+10;[reserveShift];[00day000week];[night000week];[freeDay_:-)_];[00day000week];[reserveShift];[nightweekend];
+CYCLE: 11:
+11;[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay_:-)_];
+CYCLE: 12:
+12;[night000week];[freeDay_:-)_];[00day000week];[night000week];[freeDay_:-)_];[nightweekend];[freeDay_:-)_];
+CYCLE: 13:
+13;[freeDay_:-)_];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[reserveShift];[nightweekend];
+CYCLE: 14:
+14;[00day000week];[night000week];[freeDay_:-)_];[00day000week];[night000week];[freeDay_:-)_];[freeDay_:-)_];
+CYCLE: 15:
+15;[reserveShift];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
+CYCLE: 16:
+16;[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[nightweekend];[freeDay_:-)_];
+CYCLE: 17:
+17;[00day000week];[night000week];[freeDay_:-)_];[00day000week];[night000week];[reserveShift];[00dayweekend];
