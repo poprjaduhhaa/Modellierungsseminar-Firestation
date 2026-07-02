@@ -1,22 +1,24 @@
 FINAL CYCLE:
 Mon;Tue;Wed;Thu;Fri;Sat;Sun;
 CYCLE: 1:
-[reserveShift];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
-[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[freeDay_:-)_];[nightweekend];
-[00day000week];[night000week];[freeDay_:-)_];[night000week];[reserveShift];[reserveShift];[00dayweekend];
-[freeDay_:-)_];[00day000week];[00day000week];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[00day000week];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay_:-)_];
+1;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
+1;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[freeDay_:-)_]06:00-06:00;
+1;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[00day000week]06:00-16:45;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
+1;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
+1;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
+1;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;
+1;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
 CYCLE: 2:
-[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[00dayweekend];[00dayweekend];
-[night000week];[freeDay_:-)_];[night000week];[reserveShift];[night000week];[freeDay_:-)_];[00dayweekend];
-[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];[freeDay_:-)_];
-[reserveShift];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[nightweekend];
-[00day000week];[night000week];[reserveShift];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+2;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
+2;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[nightweekend]16:15-07:00;
+2;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
+2;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[freeDay_:-)_]06:00-06:00;[reserveShift]06:00-06:00;
+2;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
+2;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
 CYCLE: 3:
-[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
-[reserveShift];[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];
-[00day000week];[00day000week];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
-[night000week];[reserveShift];[00day000week];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
-[00day000week];[00day000week];[night000week];[freeDay_:-)_];[night000week];[freeDay_:-)_];[reserveShift];
-[night000week];[freeDay_:-)_];[night000week];[reserveShift];[00day000week];[00dayweekend];[00dayweekend];
+3;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[00dayweekend]06:00-16:45;
+3;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
+3;[freeDay_:-)_]06:00-06:00;[allDay_shift]07:00-07:00;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
+3;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[allDay_shift]07:00-07:00;
+3;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
+3;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
