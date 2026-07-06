@@ -7,3 +7,4 @@ obj_w_fairness;;0
 obj_w_...;;0
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40
 avg_reference_weeks;number of weeks for average calculation;4
+max_nb_cycles;maximum number of cycles;3
