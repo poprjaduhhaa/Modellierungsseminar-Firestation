@@ -54,7 +54,8 @@ def build_shift_objects(df: pd.DataFrame) -> list:
             end=dt.time(*map(int, row['shift_end_time'].replace('24','0').split(':'))),
             required_staff=0 if row['shift_required_staff'] == 'none' else int(row['shift_required_staff']),
             shift_class=int(row['shift_class']),
-            shift_work_time_assignment=str(row['shift_work_time_assignment']),
+            shift_work_time_assignment=(None if str(row['shift_work_time_assignment']).strip().lower() in ('none', 'nan', '')
+                                        else float(row['shift_work_time_assignment'])),
             is_work_shift=bool(row['isWorkShift']),
             required_qualification=row['[shift_required_qualification]']
         )
