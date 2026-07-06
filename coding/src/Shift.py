@@ -19,7 +19,7 @@ class Shift:
     is_work_shift: bool           # boolean to reflect if a shift is treated as work-shift or not (eg "free_day" is False)
     required_qualification: str  # qualification needs for the shift (relevant for mapping suitable staff members)
 
-    
+    # Anwesenheitszeit in Stunden (für die Berechnung der Soll-Arbeitszeit)
 def shift_duration_hours(shift) -> float:
     # calculate gross shift duration in hours (handles overnight shifts)
     start_min = shift.start.hour * 60 + shift.start.minute
