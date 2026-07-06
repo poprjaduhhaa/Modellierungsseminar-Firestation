@@ -1,7 +1,7 @@
 parameter;description;value
 min_rest;minimum break after one shift [min];660
 max_conseq_working_days;maximum consecutive working days;5
-max_cycle_length;maximum cycle lenght [snake weeks];50
+max_cycle_length;maximum cycle lenght [snake weeks];18
 obj_w_workers;"weight of objectiv ""minimize number of workers"" [0,100]";50
 obj_w_fairness;weight of objective "minimize deviation from Soll weekly hours" [0,100];50
 obj_w_...;;0
