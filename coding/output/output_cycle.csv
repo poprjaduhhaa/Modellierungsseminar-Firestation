@@ -1,24 +1,28 @@
 FINAL CYCLE:
 Mon;Tue;Wed;Thu;Fri;Sat;Sun;
 CYCLE: 1:
-1;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
-1;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[freeDay_:-)_]06:00-06:00;
-1;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[00day000week]06:00-16:45;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
-1;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
-1;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
-1;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;
-1;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
-CYCLE: 2:
-2;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;
-2;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[nightweekend]16:15-07:00;
-2;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
-2;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[freeDay_:-)_]06:00-06:00;[reserveShift]06:00-06:00;
-2;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
-2;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
-CYCLE: 3:
-3;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[00dayweekend]06:00-16:45;
-3;[00day000week]06:00-16:45;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[reserveShift]06:00-06:00;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
-3;[freeDay_:-)_]06:00-06:00;[allDay_shift]07:00-07:00;[reserveShift]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
-3;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[allDay_shift]07:00-07:00;
-3;[00day000week]06:00-16:45;[00day000week]06:00-16:45;[allDay_shift]07:00-07:00;[freeDay_:-)_]06:00-06:00;[00day000week]06:00-16:45;[nightweekend]16:15-07:00;[freeDay_:-)_]06:00-06:00;
-3;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[night000week]16:15-07:00;[freeDay_:-)_]06:00-06:00;[00dayweekend]06:00-16:45;[nightweekend]16:15-07:00;
+[00day000week];[reserveShift];[00day000week];[night000week];[freeDay_:-)_];[00dayweekend];[00dayweekend];
+[reserveShift];[night000week];[freeDay_:-)_];[00day000week];[night000week];[reserveShift];[freeDay_:-)_];
+[freeDay_:-)_];[00day000week];[00day000week];[00day000week];[00day000week];[00dayweekend];[reserveShift];
+[freeDay_:-)_];[night000week];[freeDay_:-)_];[00day000week];[00day000week];[freeDay_:-)_];[nightweekend];
+[freeDay_:-)_];[night000week];[reserveShift];[reserveShift];[00day000week];[reserveShift];[nightweekend];
+[00day000week];[freeDay_:-)_];[night000week];[reserveShift];[freeDay_:-)_];[00dayweekend];[00dayweekend];
+[freeDay_:-)_];[00day000week];[freeDay_:-)_];[00day000week];[night000week];[reserveShift];[nightweekend];
+[freeDay_:-)_];[night000week];[freeDay_:-)_];[reserveShift];[freeDay_:-)_];[freeDay_:-)_];[nightweekend];
+[night000week];[reserveShift];[night000week];[reserveShift];[reserveShift];[freeDay_:-)_];[00dayweekend];
+[freeDay_:-)_];[00day000week];[freeDay_:-)_];[00day000week];[night000week];[reserveShift];[nightweekend];
+[night000week];[freeDay_:-)_];[reserveShift];[reserveShift];[night000week];[freeDay_:-)_];[reserveShift];
+[night000week];[reserveShift];[00day000week];[night000week];[reserveShift];[nightweekend];[freeDay_:-)_];
+[00day000week];[night000week];[reserveShift];[night000week];[reserveShift];[reserveShift];[reserveShift];
+[00day000week];[reserveShift];[00day000week];[night000week];[freeDay_:-)_];[reserveShift];[00dayweekend];
+[night000week];[freeDay_:-)_];[freeDay_:-)_];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+[night000week];[reserveShift];[night000week];[reserveShift];[00day000week];[nightweekend];[freeDay_:-)_];
+[freeDay_:-)_];[00day000week];[00day000week];[night000week];[reserveShift];[00dayweekend];[00dayweekend];
+[00day000week];[00day000week];[00day000week];[freeDay_:-)_];[00day000week];[nightweekend];[freeDay_:-)_];
+[00day000week];[00day000week];[night000week];[reserveShift];[reserveShift];[00dayweekend];[freeDay_:-)_];
+[00day000week];[freeDay_:-)_];[night000week];[reserveShift];[night000week];[reserveShift];[freeDay_:-)_];
+[reserveShift];[00day000week];[00day000week];[00day000week];[00day000week];[nightweekend];[freeDay_:-)_];
+[reserveShift];[freeDay_:-)_];[reserveShift];[reserveShift];[reserveShift];[freeDay_:-)_];[reserveShift];
+[reserveShift];[freeDay_:-)_];[freeDay_:-)_];[reserveShift];[freeDay_:-)_];[freeDay_:-)_];[freeDay_:-)_];
+[freeDay_:-)_];[freeDay_:-)_];[reserveShift];[freeDay_:-)_];[reserveShift];[reserveShift];[freeDay_:-)_];
+[freeDay_:-)_];[freeDay_:-)_];[reserveShift];[reserveShift];[freeDay_:-)_];[freeDay_:-)_];[reserveShift];
