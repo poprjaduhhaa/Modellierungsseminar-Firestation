@@ -9,3 +9,5 @@ obj_w_minChangeOfClasses;weight of objective "minimize change of classes from on
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40
 avg_reference_weeks;number of weeks for average calculation;4
 max_nb_cycles;maximum number of cycles;3
+max_weekly_work_hours;hard cap on work hours per single cycle week [h];56
+max_free_days_per_week;max fully free days per active cycle week;2

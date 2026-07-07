@@ -144,6 +144,30 @@ Team questions, one message: (1) max 2 free days/week given it kills pure night
 weeks? (2) reserve directly after a night shift ok? (3) Schichtkategorie for
 Pesch2: Beliebtheit class or day/late/night? (4) Beliebtheit value for reserve?
 
+## 7. STATUS 2026-07-07 late: fix batch applied and verified by a full run
+
+Applied directly by the assistant on user instruction (exception to rule 4 below),
+executed end-to-end on the user's Python 3.10 env, all cells green:
+- S0 done: output single-file (output_cycle.csv), 3.10-safe quotes.
+- S2 done: NO_HOURS_SHIFTS; reserve 24h now counted (verified: a reserve week shows
+  WorkHours 56.0 and c06 binds exactly at the cap).
+- S3 done: c06 real, MAX_WEEKLY_HOURS from new param max_weekly_work_hours=56.
+- S4 done: Pesch8 loop covers all weeks, transitions gated by active_week.
+- S6 done: RING CLOSURE cell added (c05 + c03 + Pesch8 across the wrap),
+  last-active-week indicator technique, heavily commented.
+- NEW c08: max_free_days_per_week=2 per active week (user decision; pure night
+  weeks intentionally impossible).
+- NEW: night -> reserve forbidden (explicit incompatible pairs; joker argument).
+- S7 output part done: PresenceHours column + class_<k>_presence_h columns
+  (sum verified). Class value for reserve still pending team (collision remains).
+- Knock-on fixed: Pesch2 class map now includes reserve (was KeyError after S2).
+- D1 REVERSED by user: dataset stays Pesch.csv. S1 cancelled.
+- S5 (Pesch3) NOT implemented yet: next step after this batch is reviewed.
+Observed run (weights 50/10/30/10, TimeLimit 90): 27 active weeks, 192h total
+deviation, only 1 week exactly on 40h, gap 25.6%. Interpretation: c08 forces >= 5
+work days into every active week while W_PESCH1=10 is weak, so overtime is cheap.
+This is weight calibration (S9), not a bug. Discuss target weights with the team.
+
 ## 6. Skills for the assistant (how to work, distilled from this project)
 
 1. Verify-first: before ANY claim or edit, dump the actual cells
