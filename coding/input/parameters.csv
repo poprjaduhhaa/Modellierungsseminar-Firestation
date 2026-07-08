@@ -7,8 +7,12 @@ obj_w_pesch1;weight of objective "minimize deviation from Soll weekly hours";30
 obj_w_pesch2;weight of objective "equal shift-class proportion across cycles (Pesch2)";15
 obj_w_minChangeOfClasses;weight of objective "minimize change of classes from one day to the other";10
 obj_w_pesch3;weight of objective "minimize day-by-day changes of the shift type (Pesch3)";10
+obj_w_pesch0;weight of objective "equal average weekly presence per cycle (Pesch0)";10
+obj_w_pesch4;weight of objective "equal weekly presence within each cycle (Pesch4)";10
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40
 avg_reference_weeks;number of weeks for average calculation;4
 max_nb_cycles;maximum number of cycles;3
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56
-max_free_days_per_week;max fully free days per active cycle week;2
+max_free_days_per_week;max fully free days per active cycle week (team revised 2->3);3
+max_consec_free_days;rolling cap: max free days in a row (c09);3
+obj_w_pesch7;weight of objective "equal night-shift load across cycles (Pesch7)";10
