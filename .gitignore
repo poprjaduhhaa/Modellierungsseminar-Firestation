@@ -1,1 +1,10 @@
-/coding/logs
+# Python-Zwischendateien
+__pycache__/
+*.pyc
+
+# vom Programm erzeugte Ausgaben
+/coding/logs/
+/coding/output/
+
+# virtuelle Umgebung
+/.venv/

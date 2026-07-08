@@ -16,3 +16,4 @@ max_nb_cycles;maximum number of cycles;3
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56
 max_free_days_per_week;max fully free days per active cycle week (team revised 2->3);3
 max_consec_free_days;rolling cap: max free days in a row (c09);3
+obj_w_pesch7;weight of objective "equal night-shift load across cycles (Pesch7)";10
