@@ -67,15 +67,16 @@ def build_shift_objects(df: pd.DataFrame) -> list:
 # every shift definition gets a stand-by copy so absences in ANY shift can be covered.
 # Clone count per shift: ratio of the required staff, floored, but at least 1.
 # The clone keeps all attributes (times, weekdays, work time, ...) except the class,
-# which is one step less attractive (original + 1). Works on the RAW shift set BEFORE
-# the explode into per-worker slots, so clones run through the same pipeline as any
-# shift and nothing downstream needs special cases.
+# which is one step less attractive (original + 1), capped at 10 because the
+# Beliebtheit scale ends there (team decision 2026-07-09). Works on the RAW shift set
+# BEFORE the explode into per-worker slots, so clones run through the same pipeline
+# as any shift and nothing downstream needs special cases.
 def add_reserve_clones(input_data: pd.DataFrame, ratio: float=0.2) -> pd.DataFrame:
     staff = pd.to_numeric(input_data["shift_required_staff"], errors="coerce").fillna(0)
     clones = input_data[staff > 0].copy()
     clone_staff = (staff[staff > 0] * ratio).astype(int).clip(lower=1)
     clones["shift_required_staff"] = clone_staff.astype(str)
-    clones["shift_class"] = (pd.to_numeric(clones["shift_class"]).astype(int) + 1).astype(str)
+    clones["shift_class"] = (pd.to_numeric(clones["shift_class"]).astype(int) + 1).clip(upper=10).astype(str)
     clones["shift_ID"] = clones["shift_ID"].str.replace("]", "#res]", regex=False)
     clones["shift_details"] = "reserve clone of " + clones["shift_details"].astype(str)
     return pd.concat([input_data, clones], ignore_index=True)
