@@ -6,8 +6,9 @@ obj_by_priority;"user choice: 1 use priority or 0 use weights; priority is deriv
 obj_w_workers;"weight of objectiv ""minimize number of workers""";100
 obj_w_pesch1;weight of objective "minimize deviation from Soll weekly hours";30
 obj_w_pesch2;weight of objective "equal shift-class proportion across cycles (Pesch2)";15
-obj_w_minChangeOfClasses;weight of objective "minimize change of classes from one day to the other (ticket Pesch3/Pesch8)";10
-obj_w_pesch5;weight of objective "minimize day-by-day changes of the shift type (Pesch5, relabeled from Pesch3)";10
+obj_w_minChangeOfClasses;weight of objective "minimize shift-class changes, total over the Turnusauswahl (Pesch8)";10
+obj_w_pesch3;weight of objective "minimize shift-type changes, total over the Turnusauswahl (Pesch3)";10
+obj_w_pesch5;weight of objective "minimize shift-type changes inside each Turnusgruppe, min-max over cycles (Pesch5)";10
 obj_w_pesch0;weight of objective "equal average weekly presence per cycle (Pesch0)";10
 obj_w_pesch4;weight of objective "equal weekly presence within each cycle (Pesch4)";10
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40
