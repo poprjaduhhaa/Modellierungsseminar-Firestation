@@ -20,4 +20,3 @@ solver_time_limit;solver time limit in seconds (was hard-coded 10);300
 obj_w_pesch7;weight of objective "equal night-shift load across cycles (Pesch7)";10
 obj_w_pesch6;weight of objective "equal weekend-duty load across cycles (Pesch6)";10
 reserve_clone_ratio;"reserve stand-bys: clones per shift = max(1, floor(ratio * required staff))";0.2
-solver_norel_time;"NoRel heuristic seconds (0 = off): search solutions before solving the relaxation";30
