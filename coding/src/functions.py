@@ -63,14 +63,13 @@ def build_shift_objects(df: pd.DataFrame) -> list:
     return shift_objects
 
 
-# reserve clones (team decision 2026-07-08, replaces the old hard-coded reserveShift):
-# every shift definition gets a stand-by copy so absences in ANY shift can be covered.
-# Clone count per shift: ratio of the required staff, floored, but at least 1.
+"""
+# EVERY shift definition gets a stand-by copy so absences in ANY shift can be covered.
+# Clone count per shift: ratio of the required staff, floored, but at least 1
 # The clone keeps all attributes (times, weekdays, work time, ...) except the class,
-# which is one step less attractive (original + 1), capped at 10 because the
-# Beliebtheit scale ends there (team decision 2026-07-09). Works on the RAW shift set
-# BEFORE the explode into per-worker slots, so clones run through the same pipeline
-# as any shift and nothing downstream needs special cases.
+# which is one step less attractive (original + 1), capped at 10 as global maximum. 
+# The clone is marked in the ID and description to distinguish it from the original.
+"""
 def add_reserve_clones(input_data: pd.DataFrame, ratio: float=0.2) -> pd.DataFrame:
     staff = pd.to_numeric(input_data["shift_required_staff"], errors="coerce").fillna(0)
     clones = input_data[staff > 0].copy()
@@ -82,26 +81,30 @@ def add_reserve_clones(input_data: pd.DataFrame, ratio: float=0.2) -> pd.DataFra
     return pd.concat([input_data, clones], ignore_index=True)
 
 
-# shift set
+# read shift set from file, adjust data types, and multiply rows by number of required staff
 def readShiftSet(filename, mySep: str=";", clone_ratio: float=None) -> pd.DataFrame:
-    input_data = pd.read_csv(filename, sep=mySep, dtype=str) # import all values as string as first step
+    try:
+        input_data = pd.read_csv(filename, sep=mySep, dtype=str) # import all values as string as first step
+    except:
+        raise FileNotFoundError(f"file {filename} not available")
+    
     # adjust data types for columns not (supposed to be) reflecting strings
     input_data["shift_required_staff"].astype(int)
     input_data["shift_class"].astype(int)
     input_data["shift_work_time_assignment"].astype(float)
     input_data["isWorkShift"] = input_data["isWorkShift"].astype(int).astype(bool)
+    
     # append dynamic reserve clones before the explode (None/0 = feature off)
     if clone_ratio:
         input_data = add_reserve_clones(input_data, clone_ratio)
-    # multiply rows by the number of required workers (.explode())
-    #input_data = input_data.assign(shift_required_staff=input_data["shift_required_staff"].apply(lambda n: list(range(1, n+1)))).explode("shift_required_staff")
-
-    #multiply rows by number of required staff
+    
+    # multiply rows by number of required staff
+    # add a shift_ID suffix to distinguish the slots for the same shift definition
+    # suffix will be removed later for output, but is needed for the optimizer to distinguish the slots
     input_data = input_data[input_data["shift_required_staff"].notna() 
                             & (input_data["shift_required_staff"] != 0)].loc[lambda x: x.index.repeat(x["shift_required_staff"])].assign(shift_ID=lambda x: x.groupby(level=0).cumcount().add(1)
                                    .astype(str)
                                    .radd("%_%") # use a clear - unlikely used otherwise - delimiter for later removal (relevant for output)
                                    .radd(x["shift_ID"]))    
+    
     return input_data
-    # potentially add further data cleaning steps
-
