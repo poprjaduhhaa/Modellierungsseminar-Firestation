@@ -17,7 +17,7 @@ max_nb_cycles;maximum number of cycles;3
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56
 max_free_days_per_week;max fully free days per active cycle week (team revised 2->3);3
 max_consec_free_days;rolling cap: max free days in a row (c09);3
-solver_time_limit;solver time limit in seconds (was hard-coded 10);30
+solver_time_limit;solver time limit in seconds (was hard-coded 10);300
 obj_w_pesch7;weight of objective "equal night-shift load across cycles (Pesch7)";10
 obj_w_pesch6;weight of objective "equal weekend-duty load across cycles (Pesch6)";10
 reserve_clone_ratio;"reserve stand-bys: clones per shift = max(1, floor(ratio * required staff))";0.2
