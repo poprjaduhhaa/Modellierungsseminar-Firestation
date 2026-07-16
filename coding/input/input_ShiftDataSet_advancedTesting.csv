@@ -1,0 +1,9 @@
+﻿shift_ID;shift_details;shift_weekdays;shift_start_time;shift_end_time;shift_required_staff;shift_class;shift_work_time_assignment;isWorkShift;[shift_required_qualification]
+[00day000week];day shift week;Mon, Tue, Wed, Thu, Fri;06:00;16:45;7;2;8;1;none
+[night000week];night shift week;Mon, Tue, Wed, Thu, Fri;16:15;07:00;5;7;10;1;none
+[00dayweekend];day shift weekend;Sat, Sun;06:00;16:45;5;5;8;1;none
+[nightweekend];night shift weekend;Sat, Sun;16:15;07:00;5;10;10;1;none
+[day_short_4h];short day shift;Mon, Wed, Fri, Sun;08:00;12:00;1;4;;1;none
+[day_short_6h];mid day shift;Tue, Thu, Sat;08:00;14:15;1;4;6;1;none
+[late_short4h];short late shift;Mon, Fri;14:00;18:00;1;6;;1;none
+[allDayShift_];24h shift;Mon, Tue, Wed, Thu, Fri;06:00;06:00;2;10;;1;none
