@@ -1,6 +1,6 @@
 parameter;description;value;ref;order
 obj_by_priority;"user choice: 1 use priority or 0 use weights; priority is derived from weights";0;;10
-obj_w_workers;"weight of objective ""minimize number of workers""";100;;15
+obj_w_workers;"weight of objective ""minimize number of workers""";0;;15
 obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";0;Pesch0;20
 obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";100;Pesch1;30
 obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40
@@ -22,4 +22,4 @@ max_free_days_per_week;max fully free days per active cycle week;3;;160
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56;;170
 min_rest;minimum break after one shift [min];480;;180
 reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190
-solver_time_limit;solver time limit in seconds;22;;200
+solver_time_limit;solver time limit in seconds;30;;200
