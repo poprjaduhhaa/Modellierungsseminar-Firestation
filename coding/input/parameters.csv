@@ -1,25 +1,25 @@
 parameter;description;value;ref;order
-obj_by_priority;"user choice: 1 use priority or 0 use weights; priority is derived from weights";0;;10
-obj_w_workers;"weight of objective ""minimize number of workers""";0;;15
-obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";0;Pesch0;20
-obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";100;Pesch1;30
-obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40
-obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50
+obj_by_priority;"user choice: 1 use priority; 0 use weights; priority is derived from weights descending";1;;10
+obj_w_workers;"weight of objective ""minimize number of workers""";5;;15
+obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";4;Pesch0;20
+obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";4;Pesch1;30
+obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";4;Pesch2;40
+obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";3;Pesch3;50
 obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";0;Pesch4;60
 obj_w_min_shift_type_chg_cycleplan;"weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";0;Pesch5;70
-obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";0;Pesch6;80
-obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";0;Pesch7;90
-obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";0;Pesch8;100
+obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";3;Pesch6;80
+obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";3;Pesch7;90
+obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";2;Pesch8;100
 min_nb_cycles;minimum number of cycles;1;;110
 max_nb_cycles;maximum number of cycles;5;;111
 min_cycle_length;minimum cycle lenght [snake weeks];1;;112
 max_cycle_length;maximum cycle lenght [snake weeks];8;;113
 avg_reference_weeks;number of weeks for average calculation;4;;120
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40;;130
-max_consec_free_days;rolling cap: max free days in a row (c09);3;;140
+max_consec_free_days;rolling cap: max free days in a row;3;;140
+max_free_days_per_week;maximum free days per active cycle week;3;;141
 max_conseq_working_days;maximum consecutive working days;5;;150
-max_free_days_per_week;max fully free days per active cycle week;3;;160
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56;;170
 min_rest;minimum break after one shift [min];480;;180
 reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190
-solver_time_limit;solver time limit in seconds;30;;200
+solver_time_limit;solver time limit in seconds;99;;200
