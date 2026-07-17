@@ -1,14 +1,14 @@
 parameter;description;value;ref;order
-obj_by_priority;"user choice: 1 use priority; 0 use weights; priority is derived from weights descending";0;;10
-obj_w_workers;"weight of objective ""minimize number of workers""";1;;15
+obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;10
+obj_w_workers;"weight of objective ""minimize number of workers""";0;;15
 obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";0;Pesch0;20
-obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";2;Pesch1;30
-obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";2;Pesch2;40
-obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50
+obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";0;Pesch1;30
+obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40
+obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";33;Pesch3;50
 obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";0;Pesch4;60
 obj_w_min_shift_type_chg_cycleplan;"weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";0;Pesch5;70
-obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";0;Pesch6;80
-obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";0;Pesch7;90
+obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";33;Pesch6;80
+obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";33;Pesch7;90
 obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";0;Pesch8;100
 min_nb_cycles;minimum number of cycles;1;;110
 max_nb_cycles;maximum number of cycles;20;;111
