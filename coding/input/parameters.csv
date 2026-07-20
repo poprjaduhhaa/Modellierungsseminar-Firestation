@@ -1,26 +1,26 @@
-parameter;description;value;ref;order
-obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;10
-obj_w_workers;"weight of objective ""minimize number of workers""";40;;15
-obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";0;Pesch0;20
-obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";30;Pesch1;30
-obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";15;Pesch2;40
-obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";15;Pesch3;50
-obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";0;Pesch4;60
-obj_w_min_shift_type_chg_cycleplan;"weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";0;Pesch5;70
-obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";0;Pesch6;80
-obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";0;Pesch7;90
-obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";0;Pesch8;100
-min_nb_cycles;minimum number of cycles;1;;110
-max_nb_cycles;maximum number of cycles;10;;111
-min_cycle_length;minimum cycle lenght [cycle weeks];7;;112
-max_cycle_length;maximum cycle lenght [cycle weeks];8;;113
-avg_reference_weeks;number of weeks for average calculation;4;;120
-avg_weekly_work_hours;target average weekly work hours over 4 weeks;40;;130
-max_weekly_work_hours;hard cap on work hours per single cycle week [h];56;;131
-max_consec_free_days;rolling cap: max free days in a row;3;;140
-max_free_days_per_week;maximum free days per active cycle week;3;;141
-max_conseq_working_days;maximum consecutive working days;5;;150
-min_rest;minimum break after one shift [min];480;;180
-reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190
-solver_time_limit;solver time limit in seconds;300;;200
-solver_target_gap;solver gap to upper bound limit, if gap below defined threshold the solver will stop;0;;201
+parameter;description;value;ref;order;;;;value
+obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;10;;;;0
+obj_w_workers;"weight of objective ""minimize number of workers""";75;;15;;;;17
+obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";50;Pesch0;20;;;;0
+obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";100;Pesch1;30;;;;33
+obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40;;;;0
+obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50;;;;0
+obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";50;Pesch4;60;;;;0
+obj_w_min_shift_type_chg_cycleplan;"weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";0;Pesch5;70;;;;0
+obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";40;Pesch6;80;;;;17
+obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";40;Pesch7;90;;;;17
+obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";75;Pesch8;100;;;;16
+min_nb_cycles;minimum number of cycles;1;;110;;;;3
+max_nb_cycles;maximum number of cycles;10;;111;;;;3
+min_cycle_length;minimum cycle lenght [cycle weeks];1;;112;;;;1
+max_cycle_length;maximum cycle lenght [cycle weeks];10;;113;;;;8
+avg_reference_weeks;number of weeks for average calculation;4;;120;;;;4
+avg_weekly_work_hours;target average weekly work hours over 4 weeks;40;;130;;;;40
+max_weekly_work_hours;hard cap on work hours per single cycle week [h];56;;131;;;;56
+max_consec_free_days;rolling cap: max free days in a row;3;;140;;;;3
+max_free_days_per_week;maximum free days per active cycle week;3;;141;;;;3
+max_conseq_working_days;maximum consecutive working days;5;;150;;;;5
+min_rest;minimum break after one shift [min];660;;180;;;;480
+reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190;;;;0.2
+solver_time_limit;solver time limit in seconds;300;;200;;;;600
+solver_target_gap;solver gap to upper bound limit, if gap below defined threshold the solver will stop;0;;201;;;;0
