@@ -2,6 +2,25 @@ import pandas as pd
 import datetime as dt
 from pathlib import Path
 import src.Shift as Shift # tailor-made data type for shift definitions
+import os
+import tkinter as tk
+from tkinter import filedialog
+
+
+def askCsvFile(title: str, initialdir=None) -> str:
+    root = tk.Tk()
+    try:
+        root.withdraw()
+        root.attributes("-topmost", True)
+        root.update()
+        return filedialog.askopenfilename(
+            parent=root,
+            title=title,
+            initialdir="" if initialdir is None else str(initialdir),
+            filetypes=[("CSV files", "*.csv")]
+        )
+    finally:
+        root.destroy()
 
 
 # LOGS / for process transparency 
@@ -27,10 +46,20 @@ def writeToLogs(yourStatusMessage:str, file, deleteHistory=False):
 def readParameters(filename, mySep=";") -> dict:
     try:
         df = pd.read_csv(filename, sep=mySep, dtype=str)
-        params = dict(zip(df["parameter"], df["value"]))
-        return params
     except FileNotFoundError:
         print(f"file {filename} not available")
+        file_path = askCsvFile("Select the parameters file", initialdir=Path(filename).parent)
+        if file_path:
+            df = pd.read_csv(file_path, sep=mySep, dtype=str)
+        else:
+            raise FileNotFoundError(f"No parameters file selected for {filename}.")
+
+    required_columns = {"parameter", "value"}
+    if not required_columns.issubset(df.columns):
+        raise ValueError("Parameters file must contain columns 'parameter' and 'value'.")
+
+    params = dict(zip(df["parameter"], df["value"]))
+    return params
     
 
 # LOG / for transparency write shift objects into a file:
@@ -85,9 +114,14 @@ def add_reserve_clones(input_data: pd.DataFrame, ratio: float=0.2) -> pd.DataFra
 def readShiftSet(filename, mySep: str=";", clone_ratio: float=None) -> pd.DataFrame:
     try:
         input_data = pd.read_csv(filename, sep=mySep, dtype=str) # import all values as string as first step
-    except:
-        raise FileNotFoundError(f"file {filename} not available")
-    
+    except FileNotFoundError:
+        print(f"file {filename} not available")
+        file_path = askCsvFile("Select your shift set file", initialdir=Path(filename).parent)
+        if file_path:
+            input_data = pd.read_csv(file_path, sep=mySep, dtype=str)
+        else:
+            raise FileNotFoundError(f"No shift set file selected for {filename}.")
+
     # adjust data types for columns not (supposed to be) reflecting strings
     input_data["shift_required_staff"].astype(int)
     input_data["shift_class"].astype(int)
