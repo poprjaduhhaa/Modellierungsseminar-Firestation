@@ -2,7 +2,7 @@ parameter;description;value;ref;order;;;;value
 obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;10;;;;0
 obj_w_workers;"weight of objective ""minimize number of workers""";75;;15;;;;75
 obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";50;Pesch0;20;;;;50
-obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";100;Pesch1;30;;;;100
+obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";125;Pesch1;30;;;;100
 obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40;;;;0
 obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50;;;;0
 obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";50;Pesch4;60;;;;50
@@ -22,5 +22,5 @@ max_free_days_per_week;maximum free days per active cycle week;3;;141;;;;3
 max_conseq_working_days;maximum consecutive working days;5;;150;;;;5
 min_rest;minimum break after one shift [min];660;;180;;;;660
 reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190;;;;0.2
-solver_time_limit;solver time limit in seconds;1800;;200;;;;1800
+solver_time_limit;solver time limit in seconds;0;;200;;;;0
 solver_target_gap;solver gap to upper bound limit, if gap below defined threshold the solver will stop;0.05;;201;;;;0.05
