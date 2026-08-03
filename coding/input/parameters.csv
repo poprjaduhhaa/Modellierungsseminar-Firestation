@@ -1,26 +1,26 @@
 parameter;description;value;ref;order;;;;value
-obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;10;;;;0
-obj_w_workers;"weight of objective ""minimize number of workers""";75;;15;;;;75
-obj_w_eq_avg_presence;"weight of objective ""equal average weekly presence time per cycle""";50;Pesch0;20;;;;50
-obj_w_minDev_target_weekly_hours;"weight of objective ""minimize deviation from target weekly hours""";125;Pesch1;30;;;;100
-obj_w_eq_class_prop;"weight of objective ""equal shift-class proportion across cycles""";0;Pesch2;40;;;;0
-obj_w_min_total_type_changes;"weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50;;;;0
-obj_w_eq_weekly_presence;"weight of objective ""equal weekly presence time within the cycle plan""";50;Pesch4;60;;;;50
-obj_w_min_shift_type_chg_cycleplan;"weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";0;Pesch5;70;;;;0
-obj_w_eq_weekend_duty;"weight of objective ""equal weekend-duty load across cycles""";40;Pesch6;80;;;;40
-obj_w_eq_night_duty;"weight of objective ""equal night-shift load across cycles""";40;Pesch7;90;;;;40
-obj_w_minChangeOfClasses;"weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";75;Pesch8;100;;;;75
+obj_by_priority;"user choice: 1=use priority; 0=use weights; priority is derived from weights descending";0;;9;;;;0
+obj_w_workers;"[o01] weight of objective ""minimize number of workers""";40;;10;;;;75
+obj_w_minDev_target_weekly_hours;"[o02] weight of objective ""minimize deviation from target weekly hours""";50;Pesch1;20;;;;50
+obj_w_eq_class_prop;"[o03] weight of objective ""equal shift-class proportion across cycles""";35;Pesch2;30;;;;100
+obj_w_minChangeOfClasses;"[o04] weight of objective ""minimize day-to-day shift-class changes, total over the cycle plan""";35;Pesch8;40;;;;0
+obj_w_min_total_type_changes;"[o05] weight of objective ""minimize total shift-type changes within each cycle""";0;Pesch3;50;;;;0
+obj_w_min_shift_type_chg_cycleplan;"[o06] weight of objective ""minimize shift-type changes inside the cycle plan, min-max over cycles"", based in shift-Ids";35;Pesch5;60;;;;50
+obj_w_eq_weekly_presence;"[o07] weight of objective ""equal weekly presence time within the cycle plan""";35;Pesch4;70;;;;0
+obj_w_eq_avg_presence;"[o08] weight of objective ""equal average weekly presence time per cycle""";35;Pesch0;80;;;;40
+obj_w_eq_night_duty;"[o09] weight of objective ""equal night-shift load across cycles""";30;Pesch7;90;;;;40
+obj_w_eq_weekend_duty;"[o10] weight of objective ""equal weekend-duty load across cycles""";30;Pesch6;100;;;;75
 min_nb_cycles;minimum number of cycles;1;;110;;;;1
-max_nb_cycles;maximum number of cycles;10;;111;;;;10
-min_cycle_length;minimum cycle lenght [cycle weeks];1;;112;;;;1
-max_cycle_length;maximum cycle lenght [cycle weeks];10;;113;;;;10
+max_nb_cycles;maximum number of cycles;5;;111;;;;10
+min_cycle_length;minimum cycle lenght [cycle weeks];4;;112;;;;1
+max_cycle_length;maximum cycle lenght [cycle weeks];8;;113;;;;10
 avg_reference_weeks;number of weeks for average calculation;4;;120;;;;4
 avg_weekly_work_hours;target average weekly work hours over 4 weeks;40;;130;;;;40
 max_weekly_work_hours;hard cap on work hours per single cycle week [h];56;;131;;;;56
 max_consec_free_days;rolling cap: max free days in a row;3;;140;;;;3
 max_free_days_per_week;maximum free days per active cycle week;3;;141;;;;3
 max_conseq_working_days;maximum consecutive working days;5;;150;;;;5
-min_rest;minimum break after one shift [min];660;;180;;;;660
+min_rest;minimum break after one shift [min];480;;180;;;;660
 reserve_clone_ratio;reserve stand-bys: clones per shift = max(1, floor(ratio * required staff));0.2;;190;;;;0.2
-solver_time_limit;solver time limit in seconds;0;;200;;;;0
+solver_time_limit;solver time limit in seconds;3600;;200;;;;0
 solver_target_gap;solver gap to upper bound limit, if gap below defined threshold the solver will stop;0.05;;201;;;;0.05
